@@ -5,6 +5,7 @@
   "author": "Joshua Steele <joshukraine@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
   }
 }

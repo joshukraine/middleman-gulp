@@ -15,6 +15,12 @@ configure :development do
   activate :livereload
 end
 
+activate :external_pipeline,
+  name: :gulp,
+  latency: 0,
+  command: build? ? "./node_modules/gulp/bin/gulp.js build" : "./node_modules/gulp/bin/gulp.js default",
+  source: ".tmp/dist"
+
 configure :build do
   # Minify CSS on build
   # activate :minify_css
