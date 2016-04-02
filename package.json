@@ -1,0 +1,10 @@
+{
+  "name": "middleman-gulp",
+  "version": "1.0.0",
+  "description": "Middleman template using Gulp",
+  "author": "Joshua Steele <joshukraine@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
