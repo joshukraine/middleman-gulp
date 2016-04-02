@@ -1,8 +1,8 @@
 activate :directory_indexes
 activate :autoprefixer
 
-set :css_dir, "stylesheets"
-set :js_dir, "javascripts"
+set :css_dir, "dist/css"
+set :js_dir, "dist/js"
 set :images_dir, "images"
 set :relative_links, true
 set :haml, { ugly: true, format: :html5 }
