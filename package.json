@@ -4,7 +4,7 @@
   "description": "Middleman template using Gulp",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/joshukraine/middleman-gulp"
   },
   "author": "Joshua Steele <joshukraine@gmail.com>",
   "license": "MIT",
