@@ -18,7 +18,7 @@ end
 activate :external_pipeline,
   name: :gulp,
   latency: 0,
-  command: build? ? "./node_modules/gulp/bin/gulp.js build" : "./node_modules/gulp/bin/gulp.js default",
+  command: build? ? "./node_modules/gulp/bin/gulp.js buildSite" : "./node_modules/gulp/bin/gulp.js default",
   source: ".tmp/dist"
 
 configure :build do
