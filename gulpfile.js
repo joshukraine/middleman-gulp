@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var concat = require('gulp-concat');
 
 gulp.task('styles', function() {
   return gulp.src('source/stylesheets/*.scss')
@@ -10,8 +11,17 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('source/dist/css'));
 });
 
-gulp.task('build', ['styles']);
+gulp.task('scripts', function() {
+  return gulp.src('source/javascripts/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(concat('all.js'))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('source/dist/js'));
+});
 
-gulp.task('default', ['styles'], function(){
+gulp.task('build', ['styles', 'scripts']);
+
+gulp.task('default', ['styles', 'scripts'], function(){
   gulp.watch('source/stylesheets/*.scss', ['styles']);
+  gulp.watch('source/javascripts/*.js', ['scripts']);
 });
