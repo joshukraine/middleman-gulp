@@ -27,8 +27,10 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('source/dist/js'));
 });
 
-gulp.task('build', ['styles', 'scripts']);
+// BUILD TASK - Triggered by running "middleman build" from terminal
+gulp.task('buildSite', ['styles', 'scripts']);
 
+// DEFAULT TASK - Triggered by running "middleman server" from terminal
 gulp.task('default', ['styles', 'scripts'], function(){
   gulp.watch('source/stylesheets/*.scss', ['styles']);
   gulp.watch('source/javascripts/*.js', ['scripts']);
