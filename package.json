@@ -6,6 +6,7 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^2.2.0"
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }
