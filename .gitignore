@@ -18,8 +18,8 @@
 .DS_Store
 
 /node_modules
-/source/dist/css/*.css
-/source/dist/js/*.js*
+/source/assets/css/*.css
+/source/assets/js/*.js*
 /source/stylesheets/base
 /source/stylesheets/bourbon
 /source/stylesheets/neat
