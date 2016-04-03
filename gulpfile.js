@@ -10,7 +10,7 @@ gulp.task('styles', function() {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('source/dist/css'));
+    .pipe(gulp.dest('source/assets/css'));
 });
 
 gulp.task('scripts', function() {
@@ -24,7 +24,7 @@ gulp.task('scripts', function() {
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('source/dist/js'));
+    .pipe(gulp.dest('source/assets/js'));
 });
 
 // BUILD TASK - Triggered by running "middleman build" from terminal
