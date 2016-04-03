@@ -20,3 +20,6 @@
 /node_modules
 /source/dist/css/*.css
 /source/dist/js/*.js*
+/source/stylesheets/base
+/source/stylesheets/bourbon
+/source/stylesheets/neat
