@@ -18,3 +18,5 @@
 .DS_Store
 
 /node_modules
+/source/dist/css/*.css
+/source/dist/js/*.+(js|map)
