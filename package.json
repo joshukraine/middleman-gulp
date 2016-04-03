@@ -2,12 +2,22 @@
   "name": "middleman-gulp",
   "version": "1.0.0",
   "description": "Middleman template using Gulp",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
   "author": "Joshua Steele <joshukraine@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "browserify": "^13.0.0",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
     "gulp-sass": "^2.2.0",
-    "gulp-sourcemaps": "^1.6.0"
+    "gulp-sourcemaps": "^1.6.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "moment": "^2.12.0"
   }
 }
