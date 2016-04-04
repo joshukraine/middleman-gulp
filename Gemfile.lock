@@ -8,7 +8,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
-    autoprefixer-rails (6.3.5)
+    autoprefixer-rails (6.3.6)
       execjs
     backports (3.6.8)
     bitters (1.2.0)
@@ -137,7 +137,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bitters (~> 1.0)
+  bitters (~> 1.2.0)
   bourbon (~> 4.2)
   middleman (~> 4.0)
   middleman-autoprefixer (~> 2.6)
