@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+
+set -e
+
+# Make sure Bundler is installed
+if [ "$(gem query -i -n bundler)" = "false" ]; then
+  echo "Installing Bundler..."
+  gem install bundler
+fi
+
+# Set up Ruby dependencies via Bundler
+echo "Installing dependencies..."
+bundle install
+
+# Install node packages
+echo "Installing Node package dependencies..."
+npm install
+
+# Remove Git remote if it's still the default repo
+if [ "$(git config --get remote.origin.url)" = "https://github.com/joshukraine/middleman-gulp.git" ]; then
+  echo "What is your repo url? Enter URL or leave blank"
+  read url
+  if [ -z "$url" ]; then
+    git remote rm origin
+    git remote add origin "$url"
+  fi
+fi
