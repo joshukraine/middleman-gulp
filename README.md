@@ -7,7 +7,7 @@ Huge thank-you to [Craig Dennis](https://twitter.com/craigmdennis) for his [YouT
 ### Features
 
 - [Gulp](http://gulpjs.com/) via [Gulp Starter](https://github.com/vigetlabs/gulp-starter) - Asset pipeline
-- [BrowserSync]() - Fast page reloading when changes are made in development
+- [BrowserSync](https://www.browsersync.io/) - Fast page reloading when changes are made in development
 - [Haml](http://haml.info/) - So much cleaner than ERB
 - [SassC (LibSass)](https://github.com/sass/sassc)
 
