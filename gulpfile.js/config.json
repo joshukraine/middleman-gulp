@@ -1,14 +1,13 @@
 {
   "root": {
-    "src": "./src",
-    "dest": "./public"
+    "src": "./source",
+    "dest": "./.tmp"
   },
 
   "tasks": {
     "browserSync": {
-      "server": {
-        "baseDir": "public"
-      }
+      "proxy": "http://localhost:4567",
+      "reloadDelay" : 2000
     },
 
     "static": {
@@ -20,7 +19,7 @@
       "src": "javascripts",
       "dest": "javascripts",
       "entries": {
-        "app": ["./app.js"]
+        "all": ["./all.js"]
       },
       "extensions": ["js", "json"],
       "babel": {
@@ -36,23 +35,18 @@
         "browsers": ["last 3 version"]
       },
       "sass": {
-        "indentedSyntax": true,
-        "includePaths": [
-          "./node_modules/normalize.css"
-        ]
+        "indentedSyntax": false,
+        "includePaths": []
       },
       "extensions": ["sass", "scss", "css"]
     },
 
     "html": {
-      "src": "html",
+      "src": "./",
       "dest": "./",
-      "dataFile": "data/global.json",
-      "htmlmin": {
-        "collapseWhitespace": true
-      },
-      "extensions": ["html", "json"],
-      "excludeFolders": ["layouts", "shared", "macros", "data"]
+      "htmlmin": {},
+      "extensions": ["html", "erb", "haml"],
+      "excludeFolders": ["images", "javascripts", "stylesheets"]
     },
 
     "images": {
@@ -81,7 +75,7 @@
     },
 
     "production" : {
-      "rev": true
+      "rev": false
     }
   }
 }
