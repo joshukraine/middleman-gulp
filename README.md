@@ -2,18 +2,20 @@
 
 This is a Middleman template which implements Gulp using the new [`external_pipeline`](https://middlemanapp.com/advanced/external-pipeline/) feature introduced in v4.
 
+Huge thank-you to [Craig Dennis](https://twitter.com/craigmdennis) for his [YouTube video](https://youtu.be/-io8EeB3GHI) and accompanying [GitHub repo](https://github.com/craigmdennis/middleman-gulp-starter) where he illustrates how to use Middleman with Gulp Starter.
+
 ### Features
 
-- [Gulp](http://gulpjs.com/) - Asset pipeline
-- [Browserify](http://browserify.org/) - JavaScript bundling
+- [Gulp](http://gulpjs.com/) via [Gulp Starter](https://github.com/vigetlabs/gulp-starter) - Asset pipeline
+- [BrowserSync]() - Fast page reloading when changes are made in development
 - [Haml](http://haml.info/) - So much cleaner than ERB
-- [Bourbon](http://bourbon.io/) - Sass mixin library
-- [Neat](http://neat.bourbon.io/) - Semantic grid for Sass and Bourbon
-- [Bitters](http://bitters.bourbon.io/) - Scaffold styles, variables and structure for Bourbon projects.
-- [Middleman Live Reload](https://github.com/middleman/middleman-livereload) - Reload the page when files change
 - [SassC (LibSass)](https://github.com/sass/sassc)
 
+I also like to use [Bourbon](http://bourbon.io/), [Neat](http://neat.bourbon.io/), and [Bitters](http://bitters.bourbon.io/). Uncomment these in the Gemfile if desired.
+
 ### Usage
+
+To start new Middleman site using this template, do the following:
 
 1. Clone this repo using the https link.
 
@@ -32,11 +34,12 @@ This is a Middleman template which implements Gulp using the new [`external_pipe
 
 The following repos were very helpful in setting up this template.
 
+- [https://github.com/craigmdennis/middleman-gulp-starter](https://github.com/craigmdennis/middleman-gulp-starter)
 - [https://github.com/thoughtbot/proteus-middleman](https://github.com/thoughtbot/proteus-middleman)
 - [https://github.com/NathanBowers/mm-template](https://github.com/NathanBowers/mm-template)
 
 ### Reference
 
+- [https://youtu.be/-io8EeB3GHI](https://youtu.be/-io8EeB3GHI)
 - [https://github.com/middleman/middleman/issues/1817](https://github.com/middleman/middleman/issues/1817)
-- [https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-uglify-sourcemap.md](https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-uglify-sourcemap.md)
 - [https://forum.middlemanapp.com/t/gulp-and-middleman-4/2012](https://forum.middlemanapp.com/t/gulp-and-middleman-4/2012)
