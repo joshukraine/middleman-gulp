@@ -1,29 +1,36 @@
 activate :directory_indexes
-activate :autoprefixer
 
-set :css_dir, "assets/css"
-set :js_dir, "assets/js"
-set :images_dir, "assets/images"
+set :css_dir, "stylesheets"
+set :js_dir, "javascripts"
+set :images_dir, "images"
 set :relative_links, true
 set :haml, { ugly: true, format: :html5 }
 
 page "/*.xml", layout: false
 page "/*.json", layout: false
 page "/*.txt", layout: false
+page "/404.html", directory_index: false
 
 configure :development do
-  activate :livereload
+  # activate :livereload
 end
 
 activate :external_pipeline,
   name: :gulp,
-  latency: 0,
-  command: build? ? "./node_modules/gulp/bin/gulp.js buildSite" : "./node_modules/gulp/bin/gulp.js default",
-  source: ".tmp/dist"
+  command: build? ? "npm run production" : "npm run gulp",
+  source: ".tmp",
+  latency: 1
 
 configure :build do
-  ignore "stylesheets/*"
-  ignore "javascripts/*"
-  activate :minify_css
-  activate :minify_javascript
+  activate :minify_html do |html|
+    html.remove_quotes = false
+    html.remove_intertag_spaces = true
+  end
+
+  # Ignore the CSS file Middleman normally generates
+  # Middleman expects `site.css.scss` → `site.css`
+  # We strip the `.css` to prevent Gulp generating `site.css.css`
+  # Add your site's main `.scss` filename (without the extension)
+  # To understand more, comment this out and run `middleman build`
+  ignore "stylesheets/site"
 end
