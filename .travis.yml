@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "5"
+
+before_install:
+  - rvm install 2.3.0
+
+install:
+  - bundle install
+  - npm install -g lodash marked varstream svgicons2svgfont node-gyp ttf2woff2
+  - npm install -g gulp
+  - npm install
+
+script: bundle exec middleman build --clean
+
+branches:
+  only:
+  - master

@@ -1,5 +1,7 @@
 # Middleman 4 + Gulp.js
 
+[![Build Status](https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master)](https://travis-ci.org/joshukraine/middleman-gulp)
+
 This is a Middleman template which implements Gulp using the new [`external_pipeline`](https://middlemanapp.com/advanced/external-pipeline/) feature introduced in v4.
 
 Huge thank-you to [Craig Dennis](https://twitter.com/craigmdennis) for his [YouTube video](https://youtu.be/-io8EeB3GHI) and accompanying [GitHub repo](https://github.com/craigmdennis/middleman-gulp-starter) where he illustrates how to use Middleman with Gulp Starter.
