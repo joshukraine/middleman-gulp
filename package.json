@@ -1,6 +1,6 @@
 {
   "name": "middleman-gulp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Middleman 4 template using Gulp Starter with the external pipeline",
   "engines": {
     "node": ">=0.12.0 ~5.9.0",
