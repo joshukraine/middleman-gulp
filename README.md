@@ -32,6 +32,15 @@ To start new Middleman site using this template, do the following:
 
         $ bundle exec middleman server
 
+4. Remove old git history and initialize a new repo.
+
+        $ rm -rf .git
+        $ git init
+        $ git add --all
+        $ git commit -m "Initial commit"
+        $ git remote add origin https://[your-repo-url]
+        $ git push -u origin master
+
 ### Acknowledgements
 
 The following repos were very helpful in setting up this template.
