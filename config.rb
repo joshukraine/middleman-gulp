@@ -17,6 +17,12 @@ configure :build do
     html.remove_intertag_spaces = true
   end
 
+  activate :external_pipeline,
+    name: :gulp,
+    command: "npm run production",
+    source: ".tmp",
+    latency: 1
+
   # activate :asset_hash
   # activate :asset_host,
   #   host: "//cdn.cloudfront.net",
@@ -39,9 +45,3 @@ end
 #   s3.index_document = "index.html"
 #   s3.error_document = "404.html"
 # end
-
-activate :external_pipeline,
-  name: :gulp,
-  command: build? ? "npm run production" : "npm run gulp",
-  source: ".tmp",
-  latency: 1

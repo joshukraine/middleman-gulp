@@ -28,8 +28,12 @@ To start new Middleman site using this template, do the following:
         $ cd my_new_site
         $ bin/setup
 
-3. Start the Middleman server (also runs Gulp via the external pipeline).
+3. Start the Middleman server. Appending `-e gulp` [sets the environment](https://middlemanapp.com/basics/upgrade-v4/#environments-and-changes-to-configure-blocks) to `gulp` and invokes the external pipeline.
 
+        # With Gulp
+        $ bundle exec middleman server -e gulp
+        
+        # Without Gulp
         $ bundle exec middleman server
 
 4. Remove old git history and initialize a new repo.
