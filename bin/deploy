@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# In order to use this script, first configure middleman-s3_sync
+# in config.rb
+
+set -e
+
+bundle exec middleman build --clean
+bundle exec middleman s3_sync
