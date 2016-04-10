@@ -1,0 +1,8 @@
+linters:
+  LeadingZero:
+    enabled: true
+    style: include_zero
+
+  StringQuotes:
+    enabled: true
+    style: double_quotes
