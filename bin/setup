@@ -9,7 +9,7 @@ if [ "$(gem query -i -n bundler)" = "false" ]; then
 fi
 
 # Set up Ruby dependencies via Bundler
-echo "Installing dependencies..."
+echo "Installing Ruby gem dependencies..."
 bundle install
 
 # Install node packages
