@@ -15,7 +15,7 @@ gem "sassc", "~> 1.8"
 # gem "bitters", "~> 1.2.0"
 
 # https://github.com/AndrewKvalheim/middleman-pry
-# gem "middleman-pry"
+# gem "middleman-pry", "~> 1.0"
 
 # https://github.com/Aupajo/middleman-search_engine_sitemap
 # gem "middleman-search_engine_sitemap", "~> 1.4"

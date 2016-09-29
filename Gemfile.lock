@@ -103,7 +103,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  middleman (~> 4.0)
+  middleman (~> 4.1)
   middleman-minify-html (~> 3.4)
   sassc (~> 1.8)
 
