@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
-gem "middleman", "~> 4.0"
+# https://github.com/middleman/middleman#middleman---makes-developing-websites-simple
+gem "middleman", "~> 4.1"
+
+# https://github.com/middleman/middleman-minify-html#middleman-minify-html
 gem "middleman-minify-html", "~> 3.4"
 
 # https://rubygems.org/gems/sassc
