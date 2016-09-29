@@ -18,6 +18,5 @@
 .DS_Store
 
 /node_modules
-Gemfile.lock
 .tmp
 npm-debug.log

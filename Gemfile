@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
-gem "middleman", "~> 4.0"
+# https://github.com/middleman/middleman#middleman---makes-developing-websites-simple
+gem "middleman", "~> 4.1"
+
+# https://github.com/middleman/middleman-minify-html#middleman-minify-html
 gem "middleman-minify-html", "~> 3.4"
 
 # https://rubygems.org/gems/sassc
@@ -12,7 +15,7 @@ gem "sassc", "~> 1.8"
 # gem "bitters", "~> 1.2.0"
 
 # https://github.com/AndrewKvalheim/middleman-pry
-# gem "middleman-pry"
+# gem "middleman-pry", "~> 1.0"
 
 # https://github.com/Aupajo/middleman-search_engine_sitemap
 # gem "middleman-search_engine_sitemap", "~> 1.4"
