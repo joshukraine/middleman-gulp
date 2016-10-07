@@ -1,0 +1,23 @@
+{
+  "name": "middleman-gulp",
+  "version": "2.0.0",
+  "description": "A Middleman 4 template using Gulp.js",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshukraine/middleman-gulp.git"
+  },
+  "keywords": [
+    "middleman",
+    "gulp"
+  ],
+  "author": "Joshua Steele <joshukraine@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshukraine/middleman-gulp/issues"
+  },
+  "homepage": "https://github.com/joshukraine/middleman-gulp#readme"
+}
