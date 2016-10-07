@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/joshukraine/middleman-gulp#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-imagemin": "^3.0.3"
   }
 }
