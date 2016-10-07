@@ -2,7 +2,6 @@
   "name": "middleman-gulp",
   "version": "2.0.0",
   "description": "A Middleman 4 template using Gulp.js",
-  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/joshukraine/middleman-gulp/issues"
   },
-  "homepage": "https://github.com/joshukraine/middleman-gulp#readme"
+  "homepage": "https://github.com/joshukraine/middleman-gulp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
