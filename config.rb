@@ -23,7 +23,7 @@ configure :build do
 
   activate :external_pipeline,
     name: :gulp,
-    command: "npm run production",
+    command: "./node_modules/gulp/bin/gulp.js production",
     source: ".tmp",
     latency: 1
 
