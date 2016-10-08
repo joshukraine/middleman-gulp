@@ -7,7 +7,9 @@ gem "middleman", "~> 4.1"
 gem "middleman-minify-html", "~> 3.4"
 
 # https://rubygems.org/gems/sassc
-gem "sassc", "~> 1.8"
+# Don't think we need this since we're using gulp-sass, which uses LibSass by
+# default. https://www.npmjs.com/package/gulp-sass#issues
+# gem "sassc", "~> 1.8"
 
 # See http://bourbon.io/ for installation instructions
 # gem "bourbon", "~> 4.2"
