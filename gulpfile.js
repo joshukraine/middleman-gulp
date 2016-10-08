@@ -3,34 +3,52 @@ var gulp     = require('gulp');
 var imagemin = require('gulp-imagemin');
 var changed  = require('gulp-changed');
 var del      = require('del');
+var sass     = require('gulp-sass');
 
-// file paths
-var source = 'source/';
-var dest   = '.tmp/';
-var images = {
-  in: source + 'images/*.*',
-  out: dest + 'images/'
-};
+// Primary file paths
+var src  = 'source/'; // The Middleman source folder
+var dest = '.tmp/'; // The "hot" build folder used by Middleman's external pipeline
 
-// images
-gulp.task('images', function() {
-  return gulp.src(images.in)
-    .pipe(changed(images.out)) // ignore unchanged files
-    .pipe(imagemin()) // optimize
-    .pipe(gulp.dest(images.out))
+// Configuration
+var
+  images = {
+    in: src + 'images/*.*',
+    out: dest + 'images/'
+  },
+
+  css = {
+    in: src + 'stylesheets/**/*.+(scss|sass)',
+    out: dest + 'stylesheets/',
+  };
+
+// CSS Preprocessing
+gulp.task('css', function() {
+  return gulp.src(css.in)
+    .pipe(sass())
+    .pipe(gulp.dest(css.out));
 });
 
-// clean .tmp folder
+// Image Optimization
+gulp.task('images', function() {
+  return gulp.src(images.in)
+    .pipe(changed(images.out))
+    .pipe(imagemin())
+    .pipe(gulp.dest(images.out));
+});
+
+// Clean .tmp/
 gulp.task('clean', function() {
   del([
     dest + '*'
   ]);
 });
 
-// default task
-gulp.task('default', ['images'], function() {
+// Default Task
+gulp.task('default', ['images', 'css'], function() {
 
-  // image changes
   gulp.watch(images.in, ['images']);
+  gulp.watch(css.in, ['css']);
 
 });
+
+// TODO: Production Task
