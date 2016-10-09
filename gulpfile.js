@@ -1,19 +1,37 @@
-// Gulp and required plugins
+/*
+ * gulpfile.js - https://github.com/joshukraine/middleman-gulp
+ *
+ * This Gulp build system is designed for use with Middleman and is organized
+ * into four main sections:
+ * 1. Plugins
+ * 2. Configuration
+ * 3. Worker Tasks
+ * 4. Super Tasks
+ *
+ */
+
+'use strict'; // http://www.w3schools.com/js/js_strict.asp
+
+// 1. PLUGINS
+// This is where we require Gulp itself and our other dependencies.
+
 var gulp       = require('gulp');
 var imagemin   = require('gulp-imagemin');
 var changed    = require('gulp-changed');
 var del        = require('del');
 var sass       = require('gulp-sass');
 var browserify = require('browserify');
-var stream     = require('vinyl-source-stream');
+var source     = require('vinyl-source-stream');
 var buffer     = require('vinyl-buffer');
 
-// Primary file paths
-var src  = 'source/'; // The Middleman source folder
-var dest = '.tmp/'; // The "hot" build folder used by Middleman's external pipeline
+// 2. CONFIGURATION
+// This is where we set various paths, options, and other configs for use in
+// later tasks
 
-// Configuration
 var
+  src  = 'source/', // The Middleman source folder
+  dest = '.tmp/',   // The "hot" build folder used by Middleman's external pipeline
+
   css = {
     in: src + 'stylesheets/**/*.{css,scss,sass}',
     out: dest + 'stylesheets/',
@@ -28,6 +46,9 @@ var
     in: src + 'images/*.*',
     out: dest + 'images/'
   };
+
+// 3. WORKER TASKS
+// This is where we define individual tasks that perform focused operations.
 
 // CSS Preprocessing
 gulp.task('css', function() {
@@ -44,7 +65,7 @@ gulp.task('js', function() {
   });
 
   return b.bundle()
-    .pipe(stream('bundle.js'))
+    .pipe(source('bundle.js'))
     .pipe(gulp.dest(js.out));
 });
 
@@ -63,8 +84,11 @@ gulp.task('clean', function() {
   ]);
 });
 
-// Default Task
-gulp.task('default', ['images', 'css'], function() {
+// 4. SUPER TASKS
+// These are tasks which call collections of worker tasks.
+
+// Watch Task
+gulp.task('watch', function() {
 
   gulp.watch(css.in, ['css']);
   gulp.watch(js.in, ['js']);
@@ -72,4 +96,17 @@ gulp.task('default', ['images', 'css'], function() {
 
 });
 
-// TODO: Production Task
+// Development Task
+// This task runs all the tasks that should be active with Middleman's external
+// pipeline during site development.
+gulp.task('development', ['css', 'js', 'images']);
+
+// Build Task
+// This task runs all the tasks needed for Middleman to build the site for
+// deployment to production.
+gulp.task('build', ['css', 'js', 'images', 'html']);
+
+// Default Task
+// This is the task that will be invoked by Middleman's exteranal pipeline when
+// running 'middleman server'
+gulp.task('default', ['development', 'watch']);
