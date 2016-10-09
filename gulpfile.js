@@ -15,17 +15,18 @@
 // 1. PLUGINS
 // This is where we require Gulp itself and our other dependencies.
 
-var gulp        = require('gulp');
-var imagemin    = require('gulp-imagemin');
-var changed     = require('gulp-changed');
-var del         = require('del');
-var sass        = require('gulp-sass');
-var browserify  = require('browserify');
-var source      = require('vinyl-source-stream');
-var buffer      = require('vinyl-buffer');
-var browsersync = require('browser-sync');
-var cssnano     = require('gulp-cssnano');
-var sourcemaps  = require('gulp-sourcemaps');
+var gulp         = require('gulp');
+var imagemin     = require('gulp-imagemin');
+var changed      = require('gulp-changed');
+var del          = require('del');
+var sass         = require('gulp-sass');
+var browserify   = require('browserify');
+var source       = require('vinyl-source-stream');
+var buffer       = require('vinyl-buffer');
+var browserSync  = require('browser-sync');
+var cssnano      = require('gulp-cssnano');
+var sourcemaps   = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 
 // 2. CONFIGURATION
 // This is where we set various paths, options, and other configs for use in
@@ -38,10 +39,15 @@ var
   css = {
     in: src + 'stylesheets/**/*.{css,scss,sass}',
     out: dest + 'stylesheets/',
-    sassOpts: {
-      outputStyle: 'expanded',
-      errLogToConsole: true
-    },
+  },
+
+  sassOpts = {
+    outputStyle: 'expanded',
+    errLogToConsole: true
+  },
+
+  autoprefixerOpts = {
+    browsers: ['last 3 versions', '> 5%']
   },
 
   js = {
@@ -71,6 +77,7 @@ gulp.task('css', function() {
     .pipe(sass(css.sassOpts).on('error', sass.logError))
     .pipe(cssnano())
     .pipe(sourcemaps.write())
+    .pipe(autoprefixer(autoprefixerOpts))
     .pipe(gulp.dest(css.out));
 });
 
@@ -119,7 +126,7 @@ gulp.task('build', ['css', 'js', 'images', 'html']);
 // running 'middleman server'
 gulp.task('default', ['development'], function() {
 
-  browsersync.init(serverOpts);
+  browserSync.init(serverOpts);
 
   gulp.watch(css.in, ['css']);
   gulp.watch(js.in, ['js']);
