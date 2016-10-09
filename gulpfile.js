@@ -95,17 +95,6 @@ gulp.task('clean', function() {
 // 4. SUPER TASKS
 // These are tasks which call collections of worker tasks.
 
-// Watch Task
-gulp.task('watch', ['development'], function() {
-
-  browsersync.init(serverOpts);
-
-  gulp.watch(css.in, ['css']);
-  gulp.watch(js.in, ['js']);
-  gulp.watch(images.in, ['images']);
-
-});
-
 // Development Task
 // This task runs all the tasks that should be active with Middleman's external
 // pipeline during site development.
@@ -119,4 +108,12 @@ gulp.task('build', ['css', 'js', 'images', 'html']);
 // Default Task
 // This is the task that will be invoked by Middleman's exteranal pipeline when
 // running 'middleman server'
-gulp.task('default', ['watch']);
+gulp.task('default', ['development'], function() {
+
+  browsersync.init(serverOpts);
+
+  gulp.watch(css.in, ['css']);
+  gulp.watch(js.in, ['js']);
+  gulp.watch(images.in, ['images']);
+
+});
