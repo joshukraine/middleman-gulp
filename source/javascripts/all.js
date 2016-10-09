@@ -1,1 +1,1 @@
-require('today');
+require('./today');

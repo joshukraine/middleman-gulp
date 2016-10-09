@@ -1,5 +1,5 @@
 var $ = require('jquery');
-var moment = require('moment')
+var moment = require('moment');
 
 $(function() {
   var date = moment().format('dddd, MMMM Do, YYYY');
