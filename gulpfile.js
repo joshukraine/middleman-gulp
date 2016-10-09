@@ -46,6 +46,13 @@ var
   images = {
     in: src + 'images/*.*',
     out: dest + 'images/'
+  },
+
+  serverOpts = {
+    proxy: 'localhost:4567',
+    open: false,
+    reloadDelay: 100,
+    files: [dest + '**/*.{js,css}', src + '**/*.{html,haml}']
   };
 
 // 3. WORKER TASKS
@@ -90,6 +97,8 @@ gulp.task('clean', function() {
 
 // Watch Task
 gulp.task('watch', function() {
+
+  browsersync.init(serverOpts);
 
   gulp.watch(css.in, ['css']);
   gulp.watch(js.in, ['js']);
