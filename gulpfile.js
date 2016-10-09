@@ -36,6 +36,10 @@ var
   css = {
     in: src + 'stylesheets/**/*.{css,scss,sass}',
     out: dest + 'stylesheets/',
+    sassOpts: {
+      outputStyle: 'expanded',
+      errLogToConsole: true
+    },
   },
 
   js = {
@@ -61,7 +65,7 @@ var
 // CSS Preprocessing
 gulp.task('css', function() {
   return gulp.src(css.in)
-    .pipe(sass())
+    .pipe(sass(css.sassOpts).on('error', sass.logError))
     .pipe(gulp.dest(css.out));
 });
 
