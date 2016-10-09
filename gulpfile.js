@@ -24,6 +24,8 @@ var browserify  = require('browserify');
 var source      = require('vinyl-source-stream');
 var buffer      = require('vinyl-buffer');
 var browsersync = require('browser-sync');
+var cssnano     = require('gulp-cssnano');
+var sourcemaps  = require('gulp-sourcemaps');
 
 // 2. CONFIGURATION
 // This is where we set various paths, options, and other configs for use in
@@ -65,7 +67,10 @@ var
 // CSS Preprocessing
 gulp.task('css', function() {
   return gulp.src(css.in)
+    .pipe(sourcemaps.init())
     .pipe(sass(css.sassOpts).on('error', sass.logError))
+    .pipe(cssnano())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(css.out));
 });
 
