@@ -96,7 +96,7 @@ gulp.task('clean', function() {
 // These are tasks which call collections of worker tasks.
 
 // Watch Task
-gulp.task('watch', function() {
+gulp.task('watch', ['development'], function() {
 
   browsersync.init(serverOpts);
 
@@ -119,4 +119,4 @@ gulp.task('build', ['css', 'js', 'images', 'html']);
 // Default Task
 // This is the task that will be invoked by Middleman's exteranal pipeline when
 // running 'middleman server'
-gulp.task('default', ['development', 'watch']);
+gulp.task('default', ['watch']);
