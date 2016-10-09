@@ -15,14 +15,15 @@
 // 1. PLUGINS
 // This is where we require Gulp itself and our other dependencies.
 
-var gulp       = require('gulp');
-var imagemin   = require('gulp-imagemin');
-var changed    = require('gulp-changed');
-var del        = require('del');
-var sass       = require('gulp-sass');
-var browserify = require('browserify');
-var source     = require('vinyl-source-stream');
-var buffer     = require('vinyl-buffer');
+var gulp        = require('gulp');
+var imagemin    = require('gulp-imagemin');
+var changed     = require('gulp-changed');
+var del         = require('del');
+var sass        = require('gulp-sass');
+var browserify  = require('browserify');
+var source      = require('vinyl-source-stream');
+var buffer      = require('vinyl-buffer');
+var browsersync = require('browser-sync');
 
 // 2. CONFIGURATION
 // This is where we set various paths, options, and other configs for use in
