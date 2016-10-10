@@ -1,3 +1,5 @@
+# https://github.com/brigade/scss-lint/blob/master/config/default.yml
+
 linters:
   LeadingZero:
     enabled: true
