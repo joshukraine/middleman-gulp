@@ -24,3 +24,9 @@ gem "middleman-minify-html", "~> 3.4"
 
 # https://github.com/fredjean/middleman-s3_sync
 # gem "middleman-s3_sync", "~> 4.0"
+
+# https://github.com/brigade/haml-lint
+# gem "haml_lint", "~> 0.15.2"
+
+# https://github.com/brigade/scss-lint
+# gem "scss_lint", "~> 0.50.2"
