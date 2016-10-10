@@ -27,6 +27,7 @@ var browserSync  = require('browser-sync');
 var cssnano      = require('gulp-cssnano');
 var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var environments = require('gulp-environments');
 
 // 2. CONFIGURATION
 // This is where we set various paths, options, and other configs for use in
@@ -35,6 +36,9 @@ var autoprefixer = require('gulp-autoprefixer');
 var
   src  = 'source/', // The Middleman source folder
   dest = '.tmp/',   // The "hot" build folder used by Middleman's external pipeline
+
+  development = environments.development,
+  production = environments.production,
 
   css = {
     in: src + 'stylesheets/**/*.{css,scss,sass}',
@@ -73,10 +77,10 @@ var
 // CSS Preprocessing
 gulp.task('css', function() {
   return gulp.src(css.in)
-    .pipe(sourcemaps.init())
+    .pipe(development(sourcemaps.init()))
     .pipe(sass(sassOpts).on('error', sass.logError))
     .pipe(cssnano())
-    .pipe(sourcemaps.write())
+    .pipe(development(sourcemaps.write()))
     .pipe(autoprefixer(autoprefixerOpts))
     .pipe(gulp.dest(css.out));
 });
