@@ -120,10 +120,10 @@ gulp.task('clean', function() {
 // pipeline during site development.
 gulp.task('development', ['css', 'js', 'images']);
 
-// Build Task
+// Production Task
 // This task runs all the tasks needed for Middleman to build the site for
 // deployment to production.
-gulp.task('build', ['css', 'js', 'images', 'html']);
+gulp.task('production', ['css', 'js', 'images']);
 
 // Default Task
 // This is the task that will be invoked by Middleman's exteranal pipeline when
