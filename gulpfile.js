@@ -42,7 +42,7 @@ var
   },
 
   sassOpts = {
-    outputStyle: 'expanded',
+    imagePath: '../images',
     errLogToConsole: true
   },
 
@@ -74,7 +74,7 @@ var
 gulp.task('css', function() {
   return gulp.src(css.in)
     .pipe(sourcemaps.init())
-    .pipe(sass(css.sassOpts).on('error', sass.logError))
+    .pipe(sass(sassOpts).on('error', sass.logError))
     .pipe(cssnano())
     .pipe(sourcemaps.write())
     .pipe(autoprefixer(autoprefixerOpts))
