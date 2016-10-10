@@ -21,12 +21,6 @@ configure :build do
     html.remove_intertag_spaces = true
   end
 
-  activate :external_pipeline,
-    name: :gulp,
-    command: "./node_modules/gulp/bin/gulp.js production",
-    source: ".tmp",
-    latency: 1
-
   # activate :asset_hash
   # activate :asset_host,
   #   host: "//cdn.cloudfront.net",
