@@ -31,6 +31,7 @@ configure :build do
   # https://github.com/Aupajo/middleman-search_engine_sitemap
   # activate :search_engine_sitemap
 
+  ignore "javascripts/all.js"
   ignore "stylesheets/site"
 end
 
