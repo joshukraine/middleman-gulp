@@ -16,6 +16,12 @@ gem "middleman-minify-html", "~> 3.4"
 # gem "neat", "~> 1.7"
 # gem "bitters", "~> 1.2.0"
 
+group :development do
+  gem "rspec", "~> 3.5"
+  gem "capybara", "~> 2.9"
+  gem "launchy", "~> 2.4"
+end
+
 # https://github.com/AndrewKvalheim/middleman-pry
 # gem "middleman-pry", "~> 1.0"
 

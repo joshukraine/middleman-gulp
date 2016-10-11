@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # In order to use this script, first configure middleman-s3_sync
 # in config.rb
