@@ -28,6 +28,9 @@ var cssnano      = require('gulp-cssnano');
 var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var environments = require('gulp-environments');
+var stripDebug   = require('gulp-strip-debug');
+var uglify       = require('gulp-uglify');
+var gutil        = require('gulp-util');
 
 // 2. CONFIGURATION
 // This is where we set various paths, options, and other configs for use in
@@ -57,6 +60,10 @@ var
   js = {
     in: src + 'javascripts/*.{js,coffee}',
     out: dest + 'javascripts/'
+  },
+
+  uglifyOpts = {
+    preserveComments: 'license'
   },
 
   images = {
@@ -94,6 +101,9 @@ gulp.task('js', function() {
 
   return b.bundle()
     .pipe(source('bundle.js'))
+    .pipe(production() ? buffer() : gutil.noop())
+    .pipe(production(stripDebug()))
+    .pipe(production() ? uglify(uglifyOpts) : gutil.noop())
     .pipe(gulp.dest(js.out));
 });
 
