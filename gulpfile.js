@@ -102,6 +102,14 @@ gulp.task('clean', function() {
   ]);
 });
 
+// Asset Size Report
+gulp.task('sizereport', function () {
+  return gulp.src(dest + '**/*')
+    .pipe(p.sizereport({
+      gzip: true
+    }));
+});
+
 // 4. SUPER TASKS
 
 // Development Task
@@ -111,7 +119,7 @@ gulp.task('development', function(done) {
 
 // Production Task
 gulp.task('production', function(done) {
-  p.runSequence('clean', 'css', 'js', 'images', done);
+  p.runSequence('clean', 'css', 'js', 'images', 'sizereport', done);
 });
 
 // Default Task
