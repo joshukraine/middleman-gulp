@@ -66,9 +66,9 @@ gulp.task('css', function() {
   return gulp.src(css.in)
     .pipe(development(p.sourcemaps.init()))
     .pipe(p.sass(sassOpts).on('error', p.sass.logError))
-    .pipe(p.cleanCss())
+    .pipe(p.autoprefixer(autoprefixerOpts)).on('error', handleError)
+    .pipe(production(p.cleanCss()))
     .pipe(development(p.sourcemaps.write()))
-    .pipe(p.autoprefixer(autoprefixerOpts))
     .pipe(gulp.dest(css.out));
 });
 
