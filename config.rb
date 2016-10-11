@@ -8,28 +8,6 @@ page "/*.json", layout: false
 page "/*.txt", layout: false
 page "/404.html", directory_index: false
 
-configure :build do
-  activate :minify_html do |html|
-    html.remove_quotes = false
-    html.remove_intertag_spaces = true
-  end
-
-  activate :gzip
-
-  # activate :asset_hash
-  # activate :asset_host,
-  #   host: "//cdn.cloudfront.net",
-  #   rewrite_ignore: ["*.js"]
-
-  # set :url_root, "http://example.com"
-
-  # https://github.com/Aupajo/middleman-search_engine_sitemap
-  # activate :search_engine_sitemap
-
-  ignore "javascripts/all.js"
-  ignore "stylesheets/site"
-end
-
 # https://github.com/fredjean/middleman-s3_sync
 # activate :s3_sync do |s3|
 #   s3.bucket = "your-bucket-name"
