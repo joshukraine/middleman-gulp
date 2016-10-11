@@ -68,7 +68,7 @@ var
   },
 
   images = {
-    in: src + 'images/*.*',
+    in: src + 'images/*',
     out: dest + 'images/'
   },
 
