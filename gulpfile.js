@@ -24,7 +24,7 @@ var browserify   = require('browserify');
 var source       = require('vinyl-source-stream');
 var buffer       = require('vinyl-buffer');
 var browserSync  = require('browser-sync');
-var cssnano      = require('gulp-cssnano');
+var cleanCSS     = require('gulp-clean-css');
 var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var environments = require('gulp-environments');
@@ -86,7 +86,7 @@ gulp.task('css', function() {
   return gulp.src(css.in)
     .pipe(development(sourcemaps.init()))
     .pipe(sass(sassOpts).on('error', sass.logError))
-    .pipe(cssnano())
+    .pipe(cleanCSS())
     .pipe(development(sourcemaps.write()))
     .pipe(autoprefixer(autoprefixerOpts))
     .pipe(gulp.dest(css.out));
