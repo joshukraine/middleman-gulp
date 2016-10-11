@@ -21,6 +21,8 @@ configure :build do
     html.remove_intertag_spaces = true
   end
 
+  activate :gzip
+
   # activate :asset_hash
   # activate :asset_host,
   #   host: "//cdn.cloudfront.net",
