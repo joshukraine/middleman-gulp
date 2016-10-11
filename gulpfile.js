@@ -100,7 +100,7 @@ gulp.task('js', function() {
     debug: true
   });
 
-  return b.bundle()
+  return b.bundle().on('error', handleError)
     .pipe(source('bundle.js'))
     .pipe(production() ? buffer() : gutil.noop())
     .pipe(production(stripDebug()))
@@ -152,3 +152,8 @@ gulp.task('default', ['development'], function() {
   gulp.watch(images.in, ['images']);
 
 });
+
+function handleError(err) {
+  console.log(err.toString());
+  this.emit('end');
+}
