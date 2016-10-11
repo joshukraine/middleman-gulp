@@ -11,10 +11,6 @@ page "/*.json", layout: false
 page "/*.txt", layout: false
 page "/404.html", directory_index: false
 
-# configure :development do
-#   activate :pry
-# end
-
 configure :build do
   activate :minify_html do |html|
     html.remove_quotes = false
