@@ -3,4 +3,3 @@
 skip_frontmatter: true
 exclude:
   - "source/_analytics.html.haml"
-  - "source/_head-contents.html.haml"
