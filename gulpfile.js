@@ -31,6 +31,7 @@ var environments = require('gulp-environments');
 var stripDebug   = require('gulp-strip-debug');
 var uglify       = require('gulp-uglify');
 var gutil        = require('gulp-util');
+var runSequence  = require('run-sequence');
 
 // 2. CONFIGURATION
 // This is where we set various paths, options, and other configs for use in
@@ -128,12 +129,16 @@ gulp.task('clean', function() {
 // Development Task
 // This task runs all the tasks that should be active with Middleman's external
 // pipeline during site development.
-gulp.task('development', ['css', 'js', 'images']);
+gulp.task('development', function(done) {
+  runSequence('clean', 'css', 'js', 'images', done);
+});
 
 // Production Task
 // This task runs all the tasks needed for Middleman to build the site for
 // deployment to production.
-gulp.task('production', ['css', 'js', 'images']);
+gulp.task('production', function(done) {
+  runSequence('clean', 'css', 'js', 'images', done);
+});
 
 // Default Task
 // This is the task that will be invoked by Middleman's exteranal pipeline when
