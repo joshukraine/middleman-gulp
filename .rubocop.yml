@@ -1,0 +1,49 @@
+# https://github.com/bbatsov/ruby-style-guide
+
+AllCops:
+  Exclude:
+    - 'log/**/*'
+    - 'bin/**/*'
+    - 'build/**/*'
+    - 'data/**/*'
+    - 'node_modules/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+# Metrics/AbcSize:
+#   Max: 30
+#   Exclude:
+#   - 'db/**/*'
+
+# Metrics/MethodLength:
+#   Max: 20
+#   Exclude:
+#     - 'db/**/*'
+#
+# Metrics/ClassLength:
+#   Max: 150
+# #   Exclude:
+# #     - ''
+#
+# Metrics/ParameterLists:
+#   Exclude:
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  Enabled: true
+
+# Style/PredicateName:
+#   Enabled: false
+#
+# Style/AccessorMethodName:
+#   Enabled: false
+#
+# Style/DoubleNegation:
+#   Enabled: false
+#
+# Style/ClassAndModuleChildren:
+#   Enabled: false
