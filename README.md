@@ -36,9 +36,10 @@ Usage
 
         $ middleman init my_new_site -T joshukraine/middleman-gulp
 
-2. Change into the project root and run the setup script.
+2. Change into the project root and execute the setup script.
 
         $ cd my_new_site
+        $ chmod +x bin/* # Make sure we can run included scripts
         $ bin/setup
 
 3. Start the Middleman server. Note that this will also invoke Gulp via the external pipeline.
