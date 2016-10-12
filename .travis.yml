@@ -8,13 +8,9 @@ before_install:
 install:
   - bundle install
   - npm install -g lodash marked varstream svgicons2svgfont node-gyp ttf2woff2
-  - npm install -g gulp
+  - npm install -g gulp-cli
   - npm install
 
 before_script: bin/rspec
 
 script: bundle exec middleman build --clean
-
-branches:
-  only:
-  - master
