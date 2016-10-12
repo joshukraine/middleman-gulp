@@ -1,60 +1,151 @@
-# Middleman 4 + Gulp.js
+Middleman 4 + Gulp.js
+=====================
 
 [![Build Status](https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master)](https://travis-ci.org/joshukraine/middleman-gulp)
 
-This is a Middleman template which implements Gulp using the new [`external_pipeline`](https://middlemanapp.com/advanced/external-pipeline/) feature introduced in v4.
+This is a Middleman template which implements [Gulp.js](http://gulpjs.com/) using the new [external pipeline](https://middlemanapp.com/advanced/external-pipeline/) feature introduced in v4.
 
-Huge thank-you to [Craig Dennis](https://twitter.com/craigmdennis) for his [YouTube video](https://youtu.be/-io8EeB3GHI) and accompanying [GitHub repo](https://github.com/craigmdennis/middleman-gulp-starter) where he illustrates how to use Middleman with Gulp Starter.
+Features
+--------
 
-### Features
-
-- [Gulp](http://gulpjs.com/) via [Gulp Starter](https://github.com/vigetlabs/gulp-starter) - Asset pipeline
-- [BrowserSync](https://www.browsersync.io/) - Fast page reloading when changes are made in development
+- [Gulp](http://gulpjs.com/) - Asset pipeline
+- [SassC (LibSass)](https://www.npmjs.com/package/gulp-sass)
+- [Browserify](https://www.npmjs.com/package/browserify) - JavaScript bundling
 - [Haml](http://haml.info/) - So much cleaner than ERB
-- [SassC (LibSass)](https://github.com/sass/sassc)
+- [Image Optimization](https://www.npmjs.com/package/gulp-imagemin)
+- [BrowserSync](https://www.browsersync.io/) - Fast page reloading when changes are made in development
+- Integration and unit testing with [Rspec](http://rspec.info/) and [Capybara](https://github.com/jnicklas/capybara)
+- Linting with [ESLint](https://www.npmjs.com/package/eslint), [scss-lint](https://github.com/brigade/scss-lint), and [haml-lint](https://github.com/brigade/haml-lint)
+- Deployment to Amazon S3
 
 I also like to use [Bourbon](http://bourbon.io/), [Neat](http://neat.bourbon.io/), and [Bitters](http://bitters.bourbon.io/). Uncomment these in the Gemfile if desired.
 
-### Usage
+Requirements
+------------
 
-To start new Middleman site using this template, do the following:
+* [Ruby 2.x](https://github.com/rbenv/rbenv#readme)
+* [Node 5.x](https://github.com/creationix/nvm#readme)
+* [Gulp CLI](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started)
 
-1. Clone this repo using the https link.
+Usage
+-----
 
-        $ git clone https://github.com/joshukraine/middleman-gulp.git my_new_site
+1. Start a new Middleman site using this template.
+
+        $ middleman init my_new_site -T joshukraine/middleman-gulp
 
 2. Change into the project root and run the setup script.
 
         $ cd my_new_site
         $ bin/setup
 
-3. Start the Middleman server. Appending `-e gulp` [sets the environment](https://middlemanapp.com/basics/upgrade-v4/#environments-and-changes-to-configure-blocks) to `gulp` and invokes the external pipeline.
+3. Start the Middleman server. Note that this will also invoke Gulp via the external pipeline.
 
-        # With Gulp
-        $ bundle exec middleman server -e gulp
-        
-        # Without Gulp
         $ bundle exec middleman server
 
-4. Remove old git history and initialize a new repo.
+4. Initialize a new Git repo.
 
-        $ rm -rf .git
         $ git init
         $ git add --all
         $ git commit -m "Initial commit"
         $ git remote add origin https://[your-repo-url]
         $ git push -u origin master
 
-### Acknowledgements
+Deployment
+----------
+
+I recommend Amazon S3 for deployment. It's very simple and surprisingly cost effective. Here's how to deploy your site to S3.
+
+1. Read Amazon's guide on [Hosting a Static Website](http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html)
+
+2. In the Gemfile, uncomment and install [middleman-s3_sync](https://github.com/fredjean/middleman-s3_sync)
+
+3. In config.rb, uncomment and configure the `:s3_sync` block.
+
+4. To deploy, use the included script in the `bin/` directory.
+
+        $ bin/deploy
+
+Environments
+------------
+
+Middleman has two default environments: `development` and `production`. This template is configured to run the external pipeline (Gulp in our case) in both. There are times, however, when the external pipeline should not run. Two good examples are tests and the console. We therefore define two additional environments: `test` and `console`.
+
+Custom environments can be invoked on the command line with `-e` flag like so:
+
+    # Start the console in the console enviroment
+    $ bundle exec middleman console -e console
+
+Code for custom environments is stored in `environments/<your-custom-env>.rb`. Note that custom environments can be invoked without the existence of a corresponding file in the `environments/` directory. If, for example, you merely wanted to start a server without the default `development` configs, you could run `middleman server -e <anything-here>`.
+
+For completeness, all four environments used in this template have corresponding files:
+
+```sh
+environments/
+├── console.rb
+├── development.rb
+├── production.rb
+└── test.rb
+```
+
+Middleman vs. Gulp
+------------------
+
+As I initially experimented with Gulp and Middleman, it was sometimes difficult to determine which tool should handle which tasks. The problem is that, while Gulp and Middleman are very different, they have a fair amount of overlapping functionality. For example, Middleman can [minify your CSS and JavaScript](https://middlemanapp.com/advanced/file_size_optimization/#compressing-css-and-javascript) right out of the box. So can Gulp. Middleman can also minify your [HTML](https://middlemanapp.com/advanced/file_size_optimization/#minify-html), [gzip your files](https://middlemanapp.com/advanced/file_size_optimization/#gzip-text-files), and automatically reload your browser using [LiveReload](https://middlemanapp.com/basics/development_cycle/#livereload). And Gulp can do [all](https://www.npmjs.com/package/gulp-clean-css) [these](https://www.npmjs.com/package/gulp-uglify) [things](https://www.npmjs.com/package/gulp-htmlmin) [too](https://www.npmjs.com/package/gulp-livereload).
+
+So how do you decide who does what? I think most people would be inclined to have Gulp do it all. That's what it was designed for, and it makes sense to keep all these asset-related tasks in one place. However, since we're using Gulp inside of Middleman - a robust static site generator - I think there are some tasks that are better left to Middleman. Here's how I've broken it down in this template:
+
+| Middleman       | Gulp              |
+| --------------- | ----------------- |
+| HTML Templating |                   |
+| Minify HTML     |                   |
+| Gzip Files      |                   |
+|                 | Preprocess CSS    |
+|                 | Minify CSS        |
+|                 | Minify Javascript |
+|                 | Sourcemaps        |
+|                 | Autoprefixer      |
+|                 | Bundle JavaScript |
+|                 | Compress Images   |
+|                 | Browser Reload    |
+
+Tests
+-----
+
+Testing is done with Rspec. A few basic tests are provided as an example. Run your test suite like so:
+
+    $ bin/rspec spec/
+
+Aliases
+-------
+
+Consider adding the following to your `.bashrc` or `.zshrc` file:
+
+```sh
+mm='bundle exec middleman'
+mmb='bundle exec middleman build --clean'
+mmc='bundle exec middleman console -e console'
+mms='bundle exec middleman server'
+```
+
+Acknowledgements
+----------------
 
 The following repos were very helpful in setting up this template.
 
 - [https://github.com/craigmdennis/middleman-gulp-starter](https://github.com/craigmdennis/middleman-gulp-starter)
 - [https://github.com/thoughtbot/proteus-middleman](https://github.com/thoughtbot/proteus-middleman)
 - [https://github.com/NathanBowers/mm-template](https://github.com/NathanBowers/mm-template)
+- [https://github.com/simonrice/middleman-rspec](https://github.com/simonrice/middleman-rspec)
 
-### Reference
+Reference
+---------
 
 - [https://youtu.be/-io8EeB3GHI](https://youtu.be/-io8EeB3GHI)
 - [https://github.com/middleman/middleman/issues/1817](https://github.com/middleman/middleman/issues/1817)
 - [https://forum.middlemanapp.com/t/gulp-and-middleman-4/2012](https://forum.middlemanapp.com/t/gulp-and-middleman-4/2012)
+
+License
+-------
+
+Copyright (c) 2016 Joshua Steele. [MIT License](https://github.com/joshukraine/middleman-gulp/blob/master/LICENSE)
