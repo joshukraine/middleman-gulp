@@ -15,6 +15,7 @@ Features
 - [Image Optimization](https://www.npmjs.com/package/gulp-imagemin)
 - [BrowserSync](https://www.browsersync.io/) - Fast page reloading when changes are made in development
 - Integration and unit testing with [Rspec](http://rspec.info/) and [Capybara](https://github.com/jnicklas/capybara)
+- [Pry](https://github.com/AndrewKvalheim/middleman-pry#readme) - REPL, debugger, overall better console experience
 - Linting with [ESLint](https://www.npmjs.com/package/eslint), [scss-lint](https://github.com/brigade/scss-lint#readme), and [haml-lint](https://github.com/brigade/haml-lint#readme)
 - Deployment to Amazon S3
 
