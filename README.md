@@ -10,12 +10,12 @@ Features
 
 - [Gulp](http://gulpjs.com/) - Asset pipeline
 - [SassC (LibSass)](https://www.npmjs.com/package/gulp-sass)
-- [Browserify](https://www.npmjs.com/package/browserify) - JavaScript bundling
+- [Browserify](http://browserify.org/) - JavaScript bundling
 - [Haml](http://haml.info/) - So much cleaner than ERB
 - [Image Optimization](https://www.npmjs.com/package/gulp-imagemin)
 - [BrowserSync](https://www.browsersync.io/) - Fast page reloading when changes are made in development
 - Integration and unit testing with [Rspec](http://rspec.info/) and [Capybara](https://github.com/jnicklas/capybara)
-- Linting with [ESLint](https://www.npmjs.com/package/eslint), [scss-lint](https://github.com/brigade/scss-lint), and [haml-lint](https://github.com/brigade/haml-lint)
+- Linting with [ESLint](https://www.npmjs.com/package/eslint), [scss-lint](https://github.com/brigade/scss-lint#readme), and [haml-lint](https://github.com/brigade/haml-lint#readme)
 - Deployment to Amazon S3
 
 I also like to use [Bourbon](http://bourbon.io/), [Neat](http://neat.bourbon.io/), and [Bitters](http://bitters.bourbon.io/). Uncomment these in the Gemfile if desired.
@@ -58,7 +58,7 @@ I recommend Amazon S3 for deployment. It's very simple and surprisingly cost eff
 
 1. Read Amazon's guide on [Hosting a Static Website](http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html)
 
-2. In the Gemfile, uncomment and install [middleman-s3_sync](https://github.com/fredjean/middleman-s3_sync)
+2. In the Gemfile, uncomment and install [middleman-s3_sync](https://github.com/fredjean/middleman-s3_sync#readme)
 
 3. In config.rb, uncomment and configure the `:s3_sync` block.
 
