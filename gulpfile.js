@@ -1,4 +1,4 @@
-// gulpfile.js - https://github.com/joshukraine/middleman-gulp
+// gulpfile.js - http://jsua.co/mm-gulp
 
 'use strict'; // http://www.w3schools.com/js/js_strict.asp
 
