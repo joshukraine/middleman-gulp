@@ -1,7 +1,7 @@
 Middleman 4 + Gulp.js
 =====================
 
-[![Build Status](https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master)](https://travis-ci.org/joshukraine/middleman-gulp)
+[![Build Status](https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master)](https://travis-ci.org/joshukraine/middleman-gulp) [![Dependency Status](https://gemnasium.com/badges/github.com/joshukraine/middleman-gulp.svg)](https://gemnasium.com/github.com/joshukraine/middleman-gulp)
 
 This is a [Middleman](https://middlemanapp.com/) template which implements [Gulp.js](http://gulpjs.com/) using the new [external pipeline](https://middlemanapp.com/advanced/external-pipeline/) feature introduced in Middleman 4.
 
