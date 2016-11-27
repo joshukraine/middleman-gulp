@@ -16,9 +16,10 @@ Features
 - [BrowserSync](https://www.browsersync.io/) - Fast page reloading when changes are made in development
 - [Pry](https://github.com/AndrewKvalheim/middleman-pry#readme) - REPL, debugger, overall better console experience
 - [jQuery](http://jquery.com/) and [Moment.js](http://momentjs.com/) - Included as examples and so Browserify has something to bundle. :)
+- [Web Font Loader](https://www.npmjs.com/package/webfontloader) for asynchronous font loading.
 - Integration and unit testing with [Rspec](http://rspec.info/) and [Capybara](https://github.com/jnicklas/capybara)
 - Linting with [ESLint](https://www.npmjs.com/package/eslint), [scss-lint](https://github.com/brigade/scss-lint#readme), and [haml-lint](https://github.com/brigade/haml-lint#readme)
-- Deployment to Amazon S3
+- Environment-specific deployment to Amazon S3
 
 I also like to use [Bourbon](http://bourbon.io/), [Neat](http://neat.bourbon.io/), and [Bitters](http://bitters.bourbon.io/). Uncomment these in the Gemfile if desired.
 
@@ -64,11 +65,14 @@ I recommend Amazon S3 for deployment. It's very simple and surprisingly cost eff
 
 2. In the Gemfile, uncomment and install [middleman-s3_sync](https://github.com/fredjean/middleman-s3_sync#readme)
 
-3. In config.rb, uncomment and configure the `:s3_sync` block.
+3. Configure your deployment configs in `environments/production.rb` and `environments/staging.rb`.
 
-4. To deploy, use the included script in the `bin/` directory.
+4. To deploy, run the deploy script, passing your desired environment as an argument.
 
-        $ bin/deploy
+        $ bin/deploy production
+        
+        # OR...
+        $ bin/deploy staging
 
 Environments
 ------------
@@ -82,13 +86,14 @@ Custom environments can be invoked on the command line with `-e` flag like so:
 
 Code for custom environments is stored in `environments/<your-custom-env>.rb`. Note that custom environments can be invoked without the existence of a corresponding file in the `environments/` directory. If, for example, you merely wanted to start a server without the default `development` configs, you could run `middleman server -e <anything-here>`.
 
-For completeness, all four environments used in this template have corresponding files:
+For completeness, all five environments used in this template have corresponding files:
 
 ```sh
 environments/
 ├── console.rb
 ├── development.rb
 ├── production.rb
+├── staging.rb
 └── test.rb
 ```
 
@@ -111,6 +116,7 @@ So how do you decide who does what? I think most people would be inclined to hav
 |                 | Autoprefixer      |
 |                 | Bundle JavaScript |
 |                 | Compress Images   |
+|                 | Copy web fonts    |
 |                 | Browser Reload    |
 
 Tests
