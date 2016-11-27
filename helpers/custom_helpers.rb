@@ -9,11 +9,11 @@ module CustomHelpers
     end
   end
 
-  def smart_robots(path)
+  def smart_robots(path, env)
     # Add paths (like "thank you" pages) that search engines should not index.
     # Multiple paths look like this:
     # /first_path|another_path|yet_another/
-    if !!(path =~ /thanks/)
+    if !!(path =~ /thanks/) || env != "production"
       "noindex, nofollow"
     else
       "index, follow"

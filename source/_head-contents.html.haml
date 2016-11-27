@@ -1,8 +1,8 @@
 = tag "meta", charset: "utf-8"
 = tag "meta", content: "IE=edge", "http-equiv" => "X-UA-Compatible"
 = tag "meta", content: "width=device-width, initial-scale=1.0", name: "viewport"
--# = tag "meta", name: "author", content: "<Your Name Here>"
--# = tag "meta", name: "robots", content: smart_robots(current_page.path).to_s
+= tag "meta", name: "robots", content: smart_robots(current_page.path, config[:environment].to_s)
+= tag "meta", name: "author", content: "<Your Name Here>"
 -# = tag "meta", name: "description", content: data.site.description
 - if production?
   -# = tag "meta", name: "google-site-verification",
