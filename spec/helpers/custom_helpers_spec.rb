@@ -22,15 +22,23 @@ describe CustomHelpers do
       it "returns 'noindex, nofollow'" do
         current_page = double("Sitemap")
         allow(current_page).to receive(:path).and_return("contact/thanks/")
-        expect(smart_robots(current_page.path)).to eq("noindex, nofollow")
+        expect(smart_robots(current_page.path, "production")).to eq("noindex, nofollow")
       end
     end
 
-    context "when not on 'thanks' page" do
+    context "when not in production environment" do
+      it "returns 'noindex, nofollow'" do
+        current_page = double("Sitemap")
+        allow(current_page).to receive(:path).and_return("contact")
+        expect(smart_robots(current_page.path, "staging")).to eq("noindex, nofollow")
+      end
+    end
+
+    context "when on normal page, production environment" do
       it "returns 'index, follow'" do
         current_page = double("Sitemap")
         allow(current_page).to receive(:path).and_return("contact")
-        expect(smart_robots(current_page.path)).to eq("index, follow")
+        expect(smart_robots(current_page.path, "production")).to eq("index, follow")
       end
     end
   end
