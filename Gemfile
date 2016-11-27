@@ -26,7 +26,7 @@ end
 # gem "middleman-s3_sync", "~> 4.0"
 
 # https://github.com/brigade/haml-lint
-# gem "haml_lint", "~> 0.15.2"
+# gem "haml_lint"
 
 # https://github.com/brigade/scss-lint
-# gem "scss_lint", "~> 0.50.2"
+# gem "scss_lint"
