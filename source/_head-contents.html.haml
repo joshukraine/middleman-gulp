@@ -4,21 +4,18 @@
 -# = tag "meta", name: "author", content: "<Your Name Here>"
 -# = tag "meta", name: "robots", content: smart_robots(current_page.path).to_s
 -# = tag "meta", name: "description", content: data.site.description
--# = tag "meta", name: "google-site-verification",
--#   content: "[site-verification-code-here]"
--# = tag "meta", property: "og:url", content: data.site.url
--# = tag "meta", property: "og:title", content: data.site.title
--# = tag "meta", property: "og:description", content: data.site.description
--# = tag "meta", property: "og:image", content: data.site.facebook_og_image_url
+- if production?
+  -# = tag "meta", name: "google-site-verification",
+  -#   content: "[site-verification-code-here]"
+  -# = tag "meta", property: "og:url", content: data.site.url
+  -# = tag "meta", property: "og:title", content: data.site.title
+  -# = tag "meta", property: "og:description", content: data.site.description
+  -# = tag "meta", property: "og:image", content: data.site.facebook_og_image_url
 
 %title= full_title(current_page.data.title)
 -# = favicon_tag "images/favicon.png"
 
 -# = tag "link", rel: "apple-touch-icon", href: "images/apple-touch-icon.png"
--# = tag "link", href: "https://fonts.googleapis.com/css?family=Lato:300,400",
--#        rel: "stylesheet", type: "text/css"
--# = tag "link", href: data.site.font_awesome_url, rel: "stylesheet",
--#        type: "text/css"
 
 = stylesheet_link_tag :site
-= javascript_include_tag :bundle
+= javascript_include_tag :bundle, async: !development?
