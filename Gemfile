@@ -9,7 +9,6 @@ gem "middleman-minify-html", "~> 3.4"
 # See http://bourbon.io/ for installation instructions
 # gem "bourbon", "~> 4.2"
 # gem "neat", "~> 1.8"
-# gem "bitters", "~> 1.2.0"
 
 group :development do
   gem "rspec", "~> 3.5"
@@ -27,7 +26,7 @@ end
 # gem "middleman-s3_sync", "~> 4.0"
 
 # https://github.com/brigade/haml-lint
-# gem "haml_lint", "~> 0.15.2"
+# gem "haml_lint"
 
 # https://github.com/brigade/scss-lint
-# gem "scss_lint", "~> 0.50.2"
+# gem "scss_lint"

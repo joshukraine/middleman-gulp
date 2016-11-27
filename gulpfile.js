@@ -52,6 +52,11 @@ var
     out: dest + 'images/'
   },
 
+  fonts = {
+    in: src + 'fonts/*.*',
+    out: dest + 'fonts/'
+  },
+
   serverOpts = {
     proxy: 'localhost:4567',
     open: true,
@@ -95,6 +100,13 @@ gulp.task('images', function() {
     .pipe(gulp.dest(images.out));
 });
 
+// Web Fonts
+gulp.task('fonts', function() {
+  return gulp.src(fonts.in)
+    .pipe(p.changed(fonts.out))
+    .pipe(gulp.dest(fonts.out));
+});
+
 // Clean .tmp/
 gulp.task('clean', function() {
   p.del([
@@ -114,12 +126,12 @@ gulp.task('sizereport', function () {
 
 // Development Task
 gulp.task('development', function(done) {
-  p.runSequence('clean', 'css', 'js', 'images', done);
+  p.runSequence('clean', 'css', 'fonts', 'js', 'images', done);
 });
 
 // Production Task
 gulp.task('production', function(done) {
-  p.runSequence('clean', 'css', 'js', 'images', 'sizereport', done);
+  p.runSequence('clean', 'css', 'fonts', 'js', 'images', 'sizereport', done);
 });
 
 // Default Task
