@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # https://github.com/middleman/middleman#middleman---makes-developing-websites-simple
-gem "middleman", "~> 4.1"
+gem "middleman", "~> 4.2"
 
 # https://github.com/middleman/middleman-minify-html#middleman-minify-html
 gem "middleman-minify-html", "~> 3.4"
