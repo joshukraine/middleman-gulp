@@ -28,7 +28,7 @@ Requirements
 
 * [Middleman 4.x](https://middlemanapp.com/basics/install/)
 * [Ruby 2.x](https://github.com/rbenv/rbenv#readme)
-* [Node 5.x](https://github.com/creationix/nvm#readme)
+* [Node 6.x](https://github.com/creationix/nvm#readme)
 * [Gulp CLI](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started)
 
 Usage
