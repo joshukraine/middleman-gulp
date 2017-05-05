@@ -3,7 +3,7 @@ node_js:
   - "6"
 
 before_install:
-  - rvm install 2.3.3
+  - rvm install 2.3.4
 
 install:
   - bundle install
