@@ -7,14 +7,16 @@ gem "middleman", "~> 4.2"
 gem "middleman-minify-html", "~> 3.4"
 
 # See http://bourbon.io/ for installation instructions
-# gem "bourbon", "~> 4.2"
-# gem "neat", "~> 1.8"
+# gem "bourbon", "5.0.0.beta.7"
+# gem "neat", ">= 2.0.0"
 
 group :development do
-  gem "rspec", "~> 3.5"
-  gem "capybara", "~> 2.9"
+  gem "rspec", "~> 3.6"
+  gem "capybara", "~> 2.14"
   gem "launchy", "~> 2.4"
 end
+
+gem "haml", "~> 4.0"
 
 # https://github.com/AndrewKvalheim/middleman-pry
 # gem "middleman-pry", "~> 1.0"
