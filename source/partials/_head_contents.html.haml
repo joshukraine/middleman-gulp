@@ -1,0 +1,35 @@
+:ruby
+  site_url = data.site.url
+  site_title = data.site.title
+  site_desc = data.site.description
+  site_author = data.site.author
+  page_title = current_page.data.title.to_s
+  page_path = current_page.path
+  current_env = config[:environment].to_s
+  og_url = site_url
+  og_title = site_title
+  og_desc = site_desc
+  og_default_image = data.site.facebook_og_image_url
+
+= tag "meta", charset: "utf-8"
+= tag "meta", content: "IE=edge", "http-equiv" => "X-UA-Compatible"
+= tag "meta", content: "width=device-width, initial-scale=1.0", name: "viewport"
+= tag "meta", name: "author", content: site_author
+= tag "meta", name: "description", content: site_desc
+= tag "meta", name: "robots", content: smart_robots(page_path, current_env)
+
+- if content_for?(:og_tags)
+  = yield_content :og_tags
+- else
+  = tag "meta", property: "og:url", content: site_url
+  = tag "meta", property: "og:title", content: og_title
+  = tag "meta", property: "og:description", content: og_desc
+  = tag "meta", property: "og:image", content: og_default_image
+
+%title= full_title(page_title, site_title)
+
+-# = partial "partials/analytics" if production?
+-# = favicon_tag "images/favicon.png"
+-# = tag "link", rel: "apple-touch-icon", href: "images/apple-touch-icon.png"
+= stylesheet_link_tag :site
+= javascript_include_tag :bundle, async: !development?

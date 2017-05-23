@@ -6,17 +6,18 @@ gem "middleman", "~> 4.2"
 # https://github.com/middleman/middleman-minify-html#middleman-minify-html
 gem "middleman-minify-html", "~> 3.4"
 
+# Reference: https://github.com/middleman/middleman/issues/2087
+gem "haml", "~> 4.0"
+
 # See http://bourbon.io/ for installation instructions
 # gem "bourbon", "5.0.0.beta.7"
 # gem "neat", ">= 2.0.0"
 
-group :development do
-  gem "rspec", "~> 3.6"
-  gem "capybara", "~> 2.14"
-  gem "launchy", "~> 2.4"
-end
+# https://middlemanapp.com/basics/blogging/
+# gem "middleman-blog", "~> 4.0", ">= 4.0.2"
 
-gem "haml", "~> 4.0"
+# https://github.com/sparklemotion/nokogiri
+# gem "nokogiri", "~> 1.7", ">= 1.7.2"
 
 # https://github.com/AndrewKvalheim/middleman-pry
 # gem "middleman-pry", "~> 1.0"
@@ -32,3 +33,9 @@ gem "haml", "~> 4.0"
 
 # https://github.com/brigade/scss-lint
 # gem "scss_lint"
+
+group :development do
+  gem "rspec", "~> 3.6"
+  gem "capybara", "~> 2.14"
+  gem "launchy", "~> 2.4"
+end

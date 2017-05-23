@@ -1,35 +1,35 @@
 Middleman 4 + Gulp.js
 =====================
 
-[![Build Status](https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master)](https://travis-ci.org/joshukraine/middleman-gulp) [![Dependency Status](https://gemnasium.com/badges/github.com/joshukraine/middleman-gulp.svg)](https://gemnasium.com/github.com/joshukraine/middleman-gulp)
+[![Build Status][travis-svg]][travis] [![Dependency Status][gemnasium-svg]][gemnasium]
 
-This is a [Middleman](https://middlemanapp.com/) template which implements [Gulp.js](http://gulpjs.com/) using the new [external pipeline](https://middlemanapp.com/advanced/external-pipeline/) feature introduced in Middleman 4.
+This is a [Middleman][middleman] template which implements [Gulp.js][gulp] using the new [external pipeline][external-pipeline] feature introduced in Middleman 4.
 
 Features
 --------
 
-- [Gulp](http://gulpjs.com/) - Asset pipeline
-- [SassC (LibSass)](https://www.npmjs.com/package/gulp-sass)
-- [Browserify](http://browserify.org/) - JavaScript bundling
-- [Haml](http://haml.info/) - So much cleaner than ERB
-- [Image Optimization](https://www.npmjs.com/package/gulp-imagemin)
-- [BrowserSync](https://www.browsersync.io/) - Fast page reloading when changes are made in development
-- [Pry](https://github.com/AndrewKvalheim/middleman-pry#readme) - REPL, debugger, overall better console experience
-- [jQuery](http://jquery.com/) and [Moment.js](http://momentjs.com/) - Included as examples and so Browserify has something to bundle. :)
-- [Web Font Loader](https://www.npmjs.com/package/webfontloader) for asynchronous font loading.
-- Integration and unit testing with [Rspec](http://rspec.info/) and [Capybara](https://github.com/jnicklas/capybara)
-- Linting with [ESLint](https://www.npmjs.com/package/eslint), [scss-lint](https://github.com/brigade/scss-lint#readme), and [haml-lint](https://github.com/brigade/haml-lint#readme)
+- [Gulp][gulp] - Asset pipeline
+- [SassC (LibSass)][sass] - CSS prepocessor
+- [Browserify][browserify] - JavaScript bundling
+- [Haml][haml] - So much cleaner than ERB
+- [Image Optimization][imagemin]
+- [BrowserSync][bsync] - Fast page reloading when changes are made in development
+- [Pry][pry] - REPL, debugger, overall better console experience
+- [jQuery][jquery] and [Moment.js][moment] - Included as examples and so Browserify has something to bundle. :)
+- [Web Font Loader][wfloader] for asynchronous font loading.
+- Integration and unit testing with [Rspec][rspec] and [Capybara][capybara]
+- Linting with [ESLint][eslint], [scss-lint][scss-lint], and [haml-lint][haml-lint]
 - Environment-specific deployment to Amazon S3
 
-I also like to use [Bourbon](http://bourbon.io/), [Neat](http://neat.bourbon.io/), and [Bitters](http://bitters.bourbon.io/). Uncomment these in the Gemfile if desired.
+I also like to use [Bourbon][bourbon], [Neat][neat], and [Bitters][bitters]. Uncomment these in the Gemfile if desired.
 
 Requirements
 ------------
 
-* [Middleman 4.x](https://middlemanapp.com/basics/install/)
-* [Ruby 2.x](https://github.com/rbenv/rbenv#readme)
-* [Node 6.x](https://github.com/creationix/nvm#readme)
-* [Gulp CLI](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started)
+* [Middleman 4.x][middleman-docs]
+* [Ruby 2.x][rbenv]
+* [Node 6.x][nvm]
+* [Gulp CLI][gulp-cli]
 
 Usage
 -----
@@ -61,9 +61,9 @@ Deployment
 
 I recommend Amazon S3 for deployment. It's very simple and surprisingly cost effective. Here's how to deploy your site to S3.
 
-1. Read Amazon's guide on [Hosting a Static Website](http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html)
+1. Read Amazon's guide on [Hosting a Static Website][aws-s3-deployment]
 
-2. In the Gemfile, uncomment and install [middleman-s3_sync](https://github.com/fredjean/middleman-s3_sync#readme)
+2. In the Gemfile, uncomment and install [middleman-s3_sync][s3-sync]
 
 3. Configure your deployment configs in `environments/production.rb` and `environments/staging.rb`.
 
@@ -73,6 +73,8 @@ I recommend Amazon S3 for deployment. It's very simple and surprisingly cost eff
         
         # OR...
         $ bin/deploy staging
+
+**BONUS: If you deploy with Amazon, you can get a [free ssl certificate][aws-cert-manager] for your site!**
 
 Environments
 ------------
@@ -100,7 +102,7 @@ environments/
 Middleman vs. Gulp
 ------------------
 
-As I initially experimented with Gulp and Middleman, it was sometimes difficult to determine which tool should handle which tasks. The problem is that, while Gulp and Middleman are very different, they have a fair amount of overlapping functionality. For example, Middleman can [minify your CSS and JavaScript](https://middlemanapp.com/advanced/file_size_optimization/#compressing-css-and-javascript) right out of the box. So can Gulp. Middleman can also minify your [HTML](https://middlemanapp.com/advanced/file_size_optimization/#minify-html), [gzip your files](https://middlemanapp.com/advanced/file_size_optimization/#gzip-text-files), and automatically reload your browser using [LiveReload](https://middlemanapp.com/basics/development_cycle/#livereload). And Gulp can do [all](https://www.npmjs.com/package/gulp-clean-css) [these](https://www.npmjs.com/package/gulp-uglify) [things](https://www.npmjs.com/package/gulp-htmlmin) [too](https://www.npmjs.com/package/gulp-livereload).
+As I initially experimented with Gulp and Middleman, it was sometimes difficult to determine which tool should handle which tasks. The problem is that, while Gulp and Middleman are very different, they have a fair amount of overlapping functionality. For example, Middleman can [minify your CSS and JavaScript][minify-css-js] right out of the box. So can Gulp. Middleman can also minify your [HTML][minify-html], [gzip your files][gzip], and automatically reload your browser using [LiveReload][livereload]. And Gulp can do [all][gulp-clean-css] [these][gulp-uglify] [things][gulp-htmlmin] [too][gulp-livereload].
 
 So how do you decide who does what? I think most people would be inclined to have Gulp do it all. That's what it was designed for, and it makes sense to keep all these asset-related tasks in one place. However, since we're using Gulp inside of Middleman - a robust static site generator - I think there are some tasks that are better left to Middleman. Here's how I've broken it down in this template:
 
@@ -158,4 +160,45 @@ Reference
 License
 -------
 
-Copyright (c) 2016 Joshua Steele. [MIT License](https://github.com/joshukraine/middleman-gulp/blob/master/LICENSE)
+Copyright (c) 2017 Joshua Steele. [MIT License][license]
+
+[travis-svg]: https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master
+[travis]: https://travis-ci.org/joshukraine/middleman-gulp
+[gemnasium-svg]: https://gemnasium.com/badges/github.com/joshukraine/middleman-gulp.svg
+[gemnasium]: https://gemnasium.com/github.com/joshukraine/middleman-gulp
+[middleman]: https://middlemanapp.com/
+[middleman-docs]: https://middlemanapp.com/basics/install/
+[rbenv]: https://github.com/rbenv/rbenv#readme
+[nvm]: https://github.com/creationix/nvm#readme
+[gulp-cli]: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started
+[gulp]: http://gulpjs.com/
+[sass]: https://www.npmjs.com/package/gulp-sass
+[browserify]: http://browserify.org/
+[haml]: http://haml.info/
+[imagemin]:https://www.npmjs.com/package/gulp-imagemin
+[bsync]: https://www.browsersync.io/
+[pry]: https://github.com/AndrewKvalheim/middleman-pry#readme
+[jquery]: http://jquery.com/
+[moment]: http://momentjs.com/
+[wfloader]: https://www.npmjs.com/package/webfontloader
+[rspec]: http://rspec.info/
+[capybara]: https://github.com/jnicklas/capybara
+[eslint]: https://www.npmjs.com/package/eslint
+[scss-lint]: https://github.com/brigade/scss-lint#readme
+[haml-lint]: https://github.com/brigade/haml-lint#readme
+[bourbon]: http://bourbon.io/
+[neat]: http://neat.bourbon.io/
+[bitters]: http://bitters.bourbon.io/
+[s3-sync]: https://github.com/fredjean/middleman-s3_sync#readme
+[minify-css-js]: https://middlemanapp.com/advanced/file_size_optimization/#compressing-css-and-javascript
+[minify-html]: https://middlemanapp.com/advanced/file_size_optimization/#minify-html
+[gzip]: https://middlemanapp.com/advanced/file_size_optimization/#gzip-text-files
+[livereload]: https://middlemanapp.com/basics/development_cycle/#livereload
+[gulp-clean-css]: https://www.npmjs.com/package/gulp-clean-css
+[gulp-uglify]: https://www.npmjs.com/package/gulp-uglify
+[gulp-htmlmin]:https://www.npmjs.com/package/gulp-htmlmin
+[gulp-livereload]: https://www.npmjs.com/package/gulp-livereload
+[external-pipeline]: https://middlemanapp.com/advanced/external-pipeline/
+[aws-s3-deployment]: http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html
+[aws-cert-manager]: https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/
+[license]: https://github.com/joshukraine/middleman-gulp/blob/master/LICENSE

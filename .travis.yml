@@ -14,3 +14,7 @@ install:
 before_script: bin/rspec
 
 script: bundle exec middleman build --clean
+
+branches:
+  only:
+    - master

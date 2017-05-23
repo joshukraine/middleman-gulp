@@ -4,15 +4,17 @@ describe CustomHelpers do
   describe "#full_title" do
     context "when no custom page title is provided" do
       it "provides only the base title" do
-        title = nil
-        expect(full_title(title)).to eq("MAIN SITE TITLE HERE")
+        site_title = "MAIN SITE TITLE"
+        page_title = nil
+        expect(full_title(page_title, site_title)).to eq("MAIN SITE TITLE")
       end
     end
 
     context "when a custom title is provided" do
       it "displays the custom title and the base title separated by a pipe" do
-        title = "Custom"
-        expect(full_title(title)).to eq("Custom | MAIN SITE TITLE HERE")
+        site_title = "MAIN SITE TITLE"
+        page_title = "Custom"
+        expect(full_title(page_title, site_title)).to eq("Custom | MAIN SITE TITLE")
       end
     end
   end
