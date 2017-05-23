@@ -158,4 +158,4 @@ Reference
 License
 -------
 
-Copyright (c) 2016 Joshua Steele. [MIT License](https://github.com/joshukraine/middleman-gulp/blob/master/LICENSE)
+Copyright (c) 2017 Joshua Steele. [MIT License](https://github.com/joshukraine/middleman-gulp/blob/master/LICENSE)
