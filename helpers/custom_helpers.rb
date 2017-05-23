@@ -1,11 +1,10 @@
 module CustomHelpers
-  def full_title(page_title=nil)
+  def full_title(page_title=nil, site_title)
     page_title ||= ""
-    base_title = "MAIN SITE TITLE HERE"
     if page_title.empty?
-      base_title
+      site_title
     else
-      page_title + " | " + base_title
+      page_title + " | " + site_title
     end
   end
 
@@ -24,7 +23,7 @@ module CustomHelpers
   # https://gist.github.com/bitmanic/0047ef8d7eaec0bf31bb
   def inline_svg(filename, options = {})
     root = Middleman::Application.root
-    file_path = "#{root}/source/images/#{filename}"
+    file_path = "#{root}/source/assets/images/#{filename}"
     if File.exists?(file_path)
       file = File.read(file_path).force_encoding("UTF-8")
       doc = Nokogiri::HTML::DocumentFragment.parse file
