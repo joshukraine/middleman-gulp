@@ -1,4 +1,4 @@
-// gulpfile.js - http://jsua.co/mm-gulp
+// gulpfile.js - https://jsua.co/mm-gulp
 
 'use strict'; // http://www.w3schools.com/js/js_strict.asp
 
@@ -25,12 +25,12 @@ var
   production = p.environments.production,
 
   css = {
-    in: src + 'stylesheets/**/*.{css,scss,sass}',
-    out: dest + 'stylesheets/',
+    in: src + 'assets/stylesheets/**/*.{css,scss,sass}',
+    out: dest + 'assets/stylesheets/',
   },
 
   sassOpts = {
-    imagePath: '../images',
+    imagePath: '../assets/images',
     errLogToConsole: true
   },
 
@@ -39,29 +39,26 @@ var
   },
 
   js = {
-    in: src + 'javascripts/*.{js,coffee}',
-    out: dest + 'javascripts/'
+    in: src + 'assets/javascripts/*.{js,coffee}',
+    out: dest + 'assets/javascripts/'
   },
 
   uglifyOpts = {
-    preserveComments: 'license'
+    output: {
+      comments: 'uglify-save-license'
+    }
   },
 
   images = {
-    in: src + 'images/*',
-    out: dest + 'images/'
-  },
-
-  fonts = {
-    in: src + 'fonts/*.*',
-    out: dest + 'fonts/'
+    in: src + 'assets/images/*',
+    out: dest + 'assets/images/'
   },
 
   serverOpts = {
     proxy: 'localhost:4567',
     open: true,
-    reloadDelay: 500,
-    files: [dest + '**/*.{js,css}', src + '**/*.{html,haml}']
+    reloadDelay: 700,
+    files: [dest + '**/*.{js,css}', src + '**/*.{html,haml,markdown}']
   };
 
 // 3. WORKER TASKS
@@ -80,7 +77,7 @@ gulp.task('css', function() {
 // Javascript Bundling
 gulp.task('js', function() {
   var b = p.browserify({
-    entries: src + 'javascripts/all.js',
+    entries: src + 'assets/javascripts/all.js',
     debug: true
   });
 
@@ -98,13 +95,6 @@ gulp.task('images', function() {
     .pipe(p.changed(images.out))
     .pipe(p.imagemin())
     .pipe(gulp.dest(images.out));
-});
-
-// Web Fonts
-gulp.task('fonts', function() {
-  return gulp.src(fonts.in)
-    .pipe(p.changed(fonts.out))
-    .pipe(gulp.dest(fonts.out));
 });
 
 // Clean .tmp/
@@ -126,12 +116,12 @@ gulp.task('sizereport', function () {
 
 // Development Task
 gulp.task('development', function(done) {
-  p.runSequence('clean', 'css', 'fonts', 'js', 'images', done);
+  p.runSequence('clean', 'css', 'js', 'images', done);
 });
 
 // Production Task
 gulp.task('production', function(done) {
-  p.runSequence('clean', 'css', 'fonts', 'js', 'images', 'sizereport', done);
+  p.runSequence('clean', 'css', 'js', 'images', 'sizereport', done);
 });
 
 // Default Task
