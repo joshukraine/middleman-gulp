@@ -1,0 +1,8 @@
+language: "en-us"
+name: "Site Name"
+url: "https://example.com"
+human_url: "example.com"
+title: "Site Title"
+description: "Site Description"
+author: "<Your Name>"
+facebook_og_image_url: "path/to/image"
