@@ -1,9 +1,9 @@
 {
   "name": "middleman-gulp",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "description": "A Middleman 4 template using Gulp.js",
   "author": "Joshua Steele <joshukraine@gmail.com>",
-  "homepage": "http://jsua.co/mm-gulp",
+  "homepage": "https://jsua.co/mm-gulp",
   "license": "MIT",
   "keywords": [
     "middleman",
@@ -21,30 +21,30 @@
     "production": "NODE_ENV=production gulp production"
   },
   "devDependencies": {
-    "browser-sync": "^2.17.1",
+    "browser-sync": "^2.18.12",
     "browserify": "^14.0.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-changed": "^1.3.2",
-    "gulp-clean-css": "^2.0.13",
-    "gulp-environments": "^0.1.1",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-load-plugins": "^1.3.0",
-    "gulp-sass": "^3.0.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-changed": "^3.1.0",
+    "gulp-clean-css": "^3.4.0",
+    "gulp-environments": "^0.1.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sass": "^3.1.0",
     "gulp-sizereport": "^1.2.0",
     "gulp-sourcemaps": "^2.4.0",
     "gulp-strip-debug": "^1.1.0",
-    "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "run-sequence": "^1.2.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "jquery": "^3.1.1",
-    "moment": "^2.15.1",
-    "webfontloader": "^1.6.26"
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1",
+    "webfontloader": "^1.6.27"
   },
   "engines": {
     "node": ">= 6.9.4"
