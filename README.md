@@ -74,6 +74,8 @@ I recommend Amazon S3 for deployment. It's very simple and surprisingly cost eff
         # OR...
         $ bin/deploy staging
 
+**BONUS: If you deploy with Amazon, you can get a [free ssl certificate][aws-cert-manager] for your site!**
+
 Environments
 ------------
 
