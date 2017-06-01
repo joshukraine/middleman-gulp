@@ -8,20 +8,20 @@ This is a [Middleman][middleman] template which implements [Gulp.js][gulp] using
 Features
 --------
 
-- [Gulp][gulp] - Asset pipeline
+- [Gulp.js][gulp] - Asset pipeline
 - [SassC (LibSass)][sass] - CSS prepocessor
 - [Browserify][browserify] - JavaScript bundling
 - [Haml][haml] - So much cleaner than ERB
-- [Image Optimization][imagemin]
+- [gulp-imagemin][imagemin] - Image minification
 - [BrowserSync][bsync] - Fast page reloading when changes are made in development
 - [Pry][pry] - REPL, debugger, overall better console experience
 - [jQuery][jquery] and [Moment.js][moment] - Included as examples and so Browserify has something to bundle. :)
-- [Web Font Loader][wfloader] for asynchronous font loading.
+- [Web Font Loader][wfloader] - Asynchronous font loading
+- [Bourbon 5][bourbon] - Sass mixin library (included via npm)
+- [Neat 2][neat] - Sass grid system (included via npm)
 - Integration and unit testing with [Rspec][rspec] and [Capybara][capybara]
 - Linting with [ESLint][eslint], [scss-lint][scss-lint], and [haml-lint][haml-lint]
-- Environment-specific deployment to Amazon S3
-
-I also like to use [Bourbon][bourbon], [Neat][neat], and [Bitters][bitters]. Uncomment these in the Gemfile if desired.
+- Environment-specific deployment to [Amazon S3][amazon-s3]
 
 Requirements
 ------------
@@ -160,7 +160,7 @@ Reference
 License
 -------
 
-Copyright (c) 2017 Joshua Steele. [MIT License][license]
+Copyright &copy; 2017 Joshua Steele. [MIT License][license]
 
 [travis-svg]: https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master
 [travis]: https://travis-ci.org/joshukraine/middleman-gulp
@@ -186,7 +186,7 @@ Copyright (c) 2017 Joshua Steele. [MIT License][license]
 [eslint]: https://www.npmjs.com/package/eslint
 [scss-lint]: https://github.com/brigade/scss-lint#readme
 [haml-lint]: https://github.com/brigade/haml-lint#readme
-[bourbon]: http://bourbon.io/
+[bourbon]: http://bourbon.netlify.com/docs/5.0.0/
 [neat]: http://neat.bourbon.io/
 [bitters]: http://bitters.bourbon.io/
 [s3-sync]: https://github.com/fredjean/middleman-s3_sync#readme
@@ -199,6 +199,7 @@ Copyright (c) 2017 Joshua Steele. [MIT License][license]
 [gulp-htmlmin]:https://www.npmjs.com/package/gulp-htmlmin
 [gulp-livereload]: https://www.npmjs.com/package/gulp-livereload
 [external-pipeline]: https://middlemanapp.com/advanced/external-pipeline/
-[aws-s3-deployment]: http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html
+[amazon-s3]: https://aws.amazon.com/s3/
+[aws-s3-deployment]: http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html
 [aws-cert-manager]: https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/
 [license]: https://github.com/joshukraine/middleman-gulp/blob/master/LICENSE
