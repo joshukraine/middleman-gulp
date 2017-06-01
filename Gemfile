@@ -9,10 +9,6 @@ gem "middleman-minify-html", "~> 3.4"
 # Reference: https://github.com/middleman/middleman/issues/2087
 gem "haml", "~> 4.0"
 
-# See http://bourbon.io/ for installation instructions
-# gem "bourbon", "5.0.0.beta.7"
-# gem "neat", ">= 2.0.0"
-
 # https://middlemanapp.com/basics/blogging/
 # gem "middleman-blog", "~> 4.0", ">= 4.0.2"
 
