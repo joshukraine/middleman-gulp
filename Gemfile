@@ -13,7 +13,7 @@ gem "haml", "~> 4.0"
 # gem "middleman-blog", "~> 4.0", ">= 4.0.2"
 
 # https://github.com/sparklemotion/nokogiri
-# gem "nokogiri", "~> 1.7", ">= 1.7.2"
+gem "nokogiri", "~> 1.7", ">= 1.7.2"
 
 # https://github.com/AndrewKvalheim/middleman-pry
 # gem "middleman-pry", "~> 1.0"
