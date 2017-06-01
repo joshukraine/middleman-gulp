@@ -6,10 +6,10 @@
 set -e
 ENV=$1
 
-if [[ $# -ne 1 ]]; then
-  echo "Please specify an environment."
+if [ $# -ne 1 ]; then
+  echo "Please specify an environment. Example: bin/deploy production"
   exit 1
 else
-  bundle exec middleman build --clean --environment=$ENV
-  bundle exec middleman s3_sync --environment=$ENV
+  bundle exec middleman build --clean --environment="$ENV"
+  bundle exec middleman s3_sync --environment="$ENV"
 fi
