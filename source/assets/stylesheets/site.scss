@@ -1,14 +1,14 @@
 @charset "utf-8";
-@import "normalize";
-// @import "bourbon/bourbon";
-// @import "base/base";
-// @import "neat/neat";
+@import "reset/normalize";
+@import "bourbon";
+// @import "base/base"; // Uncomment if using Bitters. (bitters.bourbon.io)
+@import "neat";
 
 body {
   background: #ECC561;
-  text-align: center;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
+  text-align: center;
 }
 
 .logo img {
@@ -33,10 +33,11 @@ h1 {
   a {
     border: 1px solid white;
     border-radius: 3px;
-    padding: 0.75em 0.7em;
     color: white;
+    padding: 0.75em 0.7em;
     text-decoration: none;
     transition: color 0.1s linear;
+
     &:hover {
       background: rgba(0,0,0,0.2);
       color: white;
