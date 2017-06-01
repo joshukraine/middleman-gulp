@@ -25,10 +25,10 @@ gem "nokogiri", "~> 1.7", ">= 1.7.2"
 # gem "middleman-s3_sync", "~> 4.0"
 
 # https://github.com/brigade/haml-lint
-# gem "haml_lint"
+gem "haml_lint"
 
 # https://github.com/brigade/scss-lint
-# gem "scss_lint"
+gem "scss_lint"
 
 group :development do
   gem "rspec", "~> 3.6"
