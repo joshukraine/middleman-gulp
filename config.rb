@@ -3,6 +3,9 @@ activate :directory_indexes
 set :relative_links, true
 set :haml, { format: :html5 }
 
+# Disable Haml warnings
+Haml::TempleEngine.disable_option_validator!
+
 page "/*.xml", layout: false
 page "/*.json", layout: false
 page "/*.txt", layout: false
