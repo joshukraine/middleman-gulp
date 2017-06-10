@@ -1,6 +1,6 @@
 {
   "name": "middleman-gulp",
-  "version": "2.3.0",
+  "version": "2.3.2",
   "description": "A Middleman 4 template using Gulp.js",
   "author": "Joshua Steele <joshukraine@gmail.com>",
   "homepage": "https://jsua.co/mm-gulp",
@@ -25,7 +25,7 @@
     "bourbon-neat": "^2.0.0",
     "browser-sync": "^2.18.12",
     "browserify": "^14.0.0",
-    "del": "^2.2.2",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-changed": "^3.1.0",
