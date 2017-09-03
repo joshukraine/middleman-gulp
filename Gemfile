@@ -7,7 +7,7 @@ gem "middleman", "~> 4.2"
 gem "middleman-minify-html", "~> 3.4"
 
 # Reference: https://github.com/middleman/middleman/issues/2087
-gem "haml", "~> 5.0", ">= 5.0.1"
+gem "haml", "~> 5.0", ">= 5.0.2"
 
 # https://middlemanapp.com/basics/blogging/
 # gem "middleman-blog", "~> 4.0", ">= 4.0.2"
@@ -32,6 +32,6 @@ gem "scss_lint"
 
 group :development do
   gem "rspec", "~> 3.6"
-  gem "capybara", "~> 2.14"
+  gem "capybara", "~> 2.15"
   gem "launchy", "~> 2.4"
 end
