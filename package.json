@@ -38,7 +38,6 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-strip-debug": "^3.0.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
     "run-sequence": "^2.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^2.0.0"
