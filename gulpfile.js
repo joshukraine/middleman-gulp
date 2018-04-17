@@ -12,8 +12,7 @@ var p = require('gulp-load-plugins')({ // This loads all the other plugins.
   pattern: ['gulp-*', 'gulp.*', 'del', 'run-*', 'browser*', 'vinyl-*'],
   rename: {
     'vinyl-source-stream': 'source',
-    'vinyl-buffer': 'buffer',
-    'gulp-util': 'gutil'
+    'vinyl-buffer': 'buffer'
   },
 });
 
