@@ -70,7 +70,7 @@ I recommend Amazon S3 for deployment. It's very simple and surprisingly cost eff
 4. To deploy, run the deploy script, passing your desired environment as an argument.
 
         $ bin/deploy production
-        
+
         # OR...
         $ bin/deploy staging
 
@@ -160,7 +160,7 @@ Reference
 License
 -------
 
-Copyright &copy; 2017 Joshua Steele. [MIT License][license]
+Copyright &copy; 2018 Joshua Steele. [MIT License][license]
 
 [travis-svg]: https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master
 [travis]: https://travis-ci.org/joshukraine/middleman-gulp
