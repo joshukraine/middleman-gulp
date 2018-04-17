@@ -85,9 +85,9 @@ gulp.task('js', function() {
 
   return b.bundle().on('error', handleError)
     .pipe(p.source('bundle.js'))
-    .pipe(production() ? p.buffer() : p.gutil.noop())
+    .pipe(production() ? p.buffer() : p.noop())
     .pipe(production(p.stripDebug()))
-    .pipe(production() ? p.uglify(uglifyOpts) : p.gutil.noop())
+    .pipe(production() ? p.uglify(uglifyOpts) : p.noop())
     .pipe(gulp.dest(js.out));
 });
 
