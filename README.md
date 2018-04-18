@@ -27,8 +27,8 @@ Requirements
 ------------
 
 * [Middleman 4.x][middleman-docs]
-* [Ruby 2.x][rbenv]
-* [Node 6.x][nvm]
+* [Ruby 2.x][ruby]
+* [Node 8.x][nodejs]
 * [Gulp CLI][gulp-cli]
 
 Usage
@@ -162,44 +162,44 @@ License
 
 Copyright &copy; 2018 Joshua Steele. [MIT License][license]
 
-[travis-svg]: https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master
-[travis]: https://travis-ci.org/joshukraine/middleman-gulp
-[gemnasium-svg]: https://gemnasium.com/badges/github.com/joshukraine/middleman-gulp.svg
-[gemnasium]: https://gemnasium.com/github.com/joshukraine/middleman-gulp
-[middleman]: https://middlemanapp.com/
-[middleman-docs]: https://middlemanapp.com/basics/install/
-[rbenv]: https://github.com/rbenv/rbenv#readme
-[nvm]: https://github.com/creationix/nvm#readme
-[gulp-cli]: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started
-[gulp]: http://gulpjs.com/
-[sass]: https://www.npmjs.com/package/gulp-sass
+[amazon-s3]: https://aws.amazon.com/s3/
+[aws-cert-manager]: https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/
+[aws-s3-deployment]: http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html
+[bitters]: http://bitters.bourbon.io/
+[bourbon]: https://www.bourbon.io/
 [browserify]: http://browserify.org/
-[haml]: http://haml.info/
-[imagemin]:https://www.npmjs.com/package/gulp-imagemin
 [bsync]: https://www.browsersync.io/
-[pry]: https://github.com/AndrewKvalheim/middleman-pry#readme
-[jquery]: http://jquery.com/
-[moment]: http://momentjs.com/
-[wfloader]: https://www.npmjs.com/package/webfontloader
-[rspec]: http://rspec.info/
 [capybara]: https://github.com/jnicklas/capybara
 [eslint]: https://www.npmjs.com/package/eslint
-[scss-lint]: https://github.com/brigade/scss-lint#readme
-[haml-lint]: https://github.com/brigade/haml-lint#readme
-[bourbon]: http://bourbon.netlify.com/docs/5.0.0/
-[neat]: http://neat.bourbon.io/
-[bitters]: http://bitters.bourbon.io/
-[s3-sync]: https://github.com/fredjean/middleman-s3_sync#readme
-[minify-css-js]: https://middlemanapp.com/advanced/file_size_optimization/#compressing-css-and-javascript
-[minify-html]: https://middlemanapp.com/advanced/file_size_optimization/#minify-html
-[gzip]: https://middlemanapp.com/advanced/file_size_optimization/#gzip-text-files
-[livereload]: https://middlemanapp.com/basics/development_cycle/#livereload
+[external-pipeline]: https://middlemanapp.com/advanced/external-pipeline/
+[gemnasium-svg]: https://gemnasium.com/badges/github.com/joshukraine/middleman-gulp.svg
+[gemnasium]: https://gemnasium.com/github.com/joshukraine/middleman-gulp
 [gulp-clean-css]: https://www.npmjs.com/package/gulp-clean-css
-[gulp-uglify]: https://www.npmjs.com/package/gulp-uglify
+[gulp-cli]: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started
 [gulp-htmlmin]:https://www.npmjs.com/package/gulp-htmlmin
 [gulp-livereload]: https://www.npmjs.com/package/gulp-livereload
-[external-pipeline]: https://middlemanapp.com/advanced/external-pipeline/
-[amazon-s3]: https://aws.amazon.com/s3/
-[aws-s3-deployment]: http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html
-[aws-cert-manager]: https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/
+[gulp-uglify]: https://www.npmjs.com/package/gulp-uglify
+[gulp]: http://gulpjs.com/
+[gzip]: https://middlemanapp.com/advanced/file_size_optimization/#gzip-text-files
+[haml-lint]: https://github.com/brigade/haml-lint#readme
+[haml]: http://haml.info/
+[imagemin]:https://www.npmjs.com/package/gulp-imagemin
+[jquery]: http://jquery.com/
 [license]: https://github.com/joshukraine/middleman-gulp/blob/master/LICENSE
+[livereload]: https://middlemanapp.com/basics/development_cycle/#livereload
+[middleman-docs]: https://middlemanapp.com/basics/install/
+[middleman]: https://middlemanapp.com/
+[minify-css-js]: https://middlemanapp.com/advanced/file_size_optimization/#compressing-css-and-javascript
+[minify-html]: https://middlemanapp.com/advanced/file_size_optimization/#minify-html
+[moment]: http://momentjs.com/
+[neat]: http://neat.bourbon.io/
+[nodejs]: https://github.com/asdf-vm/asdf-nodejs
+[pry]: https://github.com/AndrewKvalheim/middleman-pry#readme
+[rspec]: http://rspec.info/
+[ruby]: https://github.com/asdf-vm/asdf-ruby
+[s3-sync]: https://github.com/fredjean/middleman-s3_sync#readme
+[sass]: https://www.npmjs.com/package/gulp-sass
+[scss-lint]: https://github.com/brigade/scss-lint#readme
+[travis-svg]: https://travis-ci.org/joshukraine/middleman-gulp.svg?branch=master
+[travis]: https://travis-ci.org/joshukraine/middleman-gulp
+[wfloader]: https://www.npmjs.com/package/webfontloader
