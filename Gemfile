@@ -13,7 +13,7 @@ gem "haml", "~> 5.0", ">= 5.0.2"
 # gem "middleman-blog", "~> 4.0", ">= 4.0.2"
 
 # https://github.com/sparklemotion/nokogiri
-gem "nokogiri", "~> 1.8"
+gem "nokogiri", "~> 1.8", ">= 1.8.2"
 
 # https://github.com/AndrewKvalheim/middleman-pry
 gem "middleman-pry", "~> 1.0"
@@ -31,7 +31,7 @@ gem "haml_lint"
 gem "scss_lint"
 
 group :development do
-  gem "rspec", "~> 3.6"
-  gem "capybara", "~> 2.15"
+  gem "capybara", "~> 2.18"
   gem "launchy", "~> 2.4"
+  gem "rspec", "~> 3.7"
 end
