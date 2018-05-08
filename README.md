@@ -1,7 +1,7 @@
 Middleman 4 + Gulp.js
 =====================
 
-[![Build Status][travis-svg]][travis] [![Dependency Status][gemnasium-svg]][gemnasium]
+[![Build Status][travis-svg]][travis]
 
 This is a [Middleman][middleman] template which implements [Gulp.js][gulp] using the new [external pipeline][external-pipeline] feature introduced in Middleman 4.
 
@@ -172,8 +172,6 @@ Copyright &copy; 2018 Joshua Steele. [MIT License][license]
 [capybara]: https://github.com/jnicklas/capybara
 [eslint]: https://www.npmjs.com/package/eslint
 [external-pipeline]: https://middlemanapp.com/advanced/external-pipeline/
-[gemnasium-svg]: https://gemnasium.com/badges/github.com/joshukraine/middleman-gulp.svg
-[gemnasium]: https://gemnasium.com/github.com/joshukraine/middleman-gulp
 [gulp-clean-css]: https://www.npmjs.com/package/gulp-clean-css
 [gulp-cli]: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started
 [gulp-htmlmin]:https://www.npmjs.com/package/gulp-htmlmin
